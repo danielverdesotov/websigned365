@@ -1,0 +1,176 @@
+/* ============================================================
+   SIGNED365 | WEB EVOLUTION V8
+   01. Popup centrado fade, 02. Slider móvil, 03. Internas
+   ============================================================ */
+
+/* 01. Popup: conserva la campana y la espera de cinco segundos. */
+.announcement {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+}
+.announcement .announcement-shade {
+    position: absolute;
+    inset: 0;
+    background: rgba(4, 15, 31, .63);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .38s ease, visibility .38s;
+}
+.announcement .announcement-panel {
+    position: relative;
+    width: min(91vw, 920px);
+    max-height: min(88dvh, 880px);
+    margin: auto;
+    overflow: auto;
+    border-radius: 18px;
+    background: var(--card, #fff);
+    color: var(--ink, #142b3b);
+    box-shadow: 0 25px 85px rgba(0, 13, 35, .35);
+    transform: translateY(16px) scale(.965);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .42s cubic-bezier(.18,.8,.24,1), opacity .38s ease, visibility .42s;
+    pointer-events: none;
+}
+.announcement.is-open .announcement-panel {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+.announcement.is-open .announcement-shade {
+    opacity: 1;
+    visibility: visible;
+}
+.announcement .announcement-heading {
+    padding: 13px 18px 10px;
+    gap: 10px;
+}
+.announcement .announcement-heading h2 { font-size: clamp(1.05rem, 2vw, 1.4rem); }
+.announcement .announcement-close { width: 40px; height: 40px; font-size: 26px; }
+.announcement .announcement-content { padding: 0 14px 15px; }
+.announcement .announcement-image {
+    width: 100%;
+    max-height: min(67dvh, 690px);
+    object-fit: contain;
+    background: #0876b6;
+    border-radius: 10px;
+}
+.announcement .announcement-link { display: block; text-decoration: none; }
+.announcement .announcement-note { text-align: center; color: var(--muted, #536b7b); margin-top: 9px; }
+
+/* 02. El mockup del Home nunca se encoge por las reglas de .hero-art.
+   En pantallas pequeñas mantiene proporciones y deja espacio a la campana. */
+#portada .hero-grid > *, #portada .solutions-devices { min-width: 0; }
+#portada .solutions-devices { width: 100%; max-width: none; }
+#portada .devices-stage {
+    width: 100%;
+    max-width: 740px;
+    min-width: 0;
+    padding: 20px 11% 56px 3%;
+    margin: 0 auto;
+}
+#portada .device-laptop { width: 100%; }
+#portada .device-phone {
+    right: 1%;
+    bottom: 56px;
+    width: 24%;
+    min-width: 0;
+}
+#portada .laptop-screen.hero-slider {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 560 / 360;
+    overflow: hidden;
+}
+#portada .devices-indicators { bottom: 10px; }
+#portada .laptop-screen .hero-slide,
+#portada .phone-screen .phone-slide { display: block; max-width: none; }
+
+@media (max-width: 900px) {
+    #portada .hero-grid { grid-template-columns: minmax(0, 1fr); }
+    #portada .hero-art.solutions-devices { width: 100%; max-width: 650px; margin: 0 auto; }
+}
+@media (max-width: 600px) {
+    #portada .hero-grid { gap: 18px; }
+    #portada .hero-art.solutions-devices { padding: 4px 0 12px; }
+    #portada .devices-stage {
+        width: 100%;
+        max-width: 480px;
+        padding: 10px 12% 47px 1%;
+    }
+    #portada .device-laptop { width: 100%; }
+    #portada .device-phone { right: 1%; bottom: 47px; width: 25%; }
+    #portada .devices-indicators { bottom: 5px; }
+    .announcement .announcement-panel { width: min(94vw, 920px); max-height: 86dvh; }
+    .announcement .announcement-image { max-height: 62dvh; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .announcement .announcement-panel,
+    .announcement .announcement-shade { transition-duration: .01ms; }
+}
+
+/* 03. Páginas internas V8. */
+.v8-hero { background: var(--soft); padding: 88px 0 76px; }
+.v8-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 42px; }
+.v8-hero h1 { margin: 14px 0 20px; }
+.v8-hero h1 em { color: var(--blue); font-style: normal; }
+.v8-hero p { max-width: 540px; }
+.v8-hero-visual { min-height: 300px; display: grid; align-content: center; padding: 28px; border-radius: 22px; background: linear-gradient(140deg,#004470,#0074b9); color: white; }
+.v8-hero-visual .hero-icon { font-size: clamp(3rem, 7vw, 5rem); }
+.v8-hero-visual p { color: #e7f6ff; }
+.v8-article-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+.v8-resource-card { display: flex; flex-direction: column; overflow: hidden; }
+.v8-resource-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; margin-bottom: 16px; }
+.v8-resource-card p { flex: 1; }
+.v8-tag { display: inline-flex; align-self: start; padding: 4px 10px; color: var(--blue); background: var(--soft); border-radius: 50px; font-size: .76rem; font-weight: 700; margin-bottom: 8px; }
+.v8-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; justify-content: center; margin: 8px 0 30px; }
+.v8-filter { border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; background: var(--card); color: var(--ink); }
+.v8-filter.is-active, .v8-filter[aria-pressed="true"] { background: #0074b9; color: white; border-color: #0074b9; }
+.v8-search { width: min(100%, 680px); display: block; margin: 0 auto 20px; background: var(--card); color: var(--ink); border: 1px solid var(--line); border-radius: 11px; padding: 14px 18px; }
+.v8-faq-group { max-width: 880px; margin: 0 auto 40px; }
+.v8-faq-group h3 { color: var(--ink); margin-bottom: 14px; }
+.v8-faq-group details { margin-bottom: 9px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 18px; }
+.v8-faq-group summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+.v8-faq-group details p { margin: 10px 0 0; }
+.v8-empty { text-align: center; padding: 18px; color: var(--muted); }
+@media (max-width: 850px) { .v8-hero-grid { grid-template-columns: 1fr; } .v8-article-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 600px) { .v8-article-grid { grid-template-columns: 1fr; } .v8-hero { padding: 64px 0; } .v8-hero-visual { min-height: 200px; } }
+
+/* V8 | Recursos y FAQ: maquetación basada en los bocetos aprobados. */
+.v8-wire-hero{padding:64px 0 58px;text-align:center;background:var(--surface,#f4f7fb)}
+.v8-wire-hero h1{font-size:clamp(2rem,4vw,3.3rem);font-weight:700;margin:12px 0}
+.v8-wire-hero p{max-width:680px;margin:0 auto;color:var(--muted,#526b83);line-height:1.7}
+.v8-wire-feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+.v8-wire-feature,.v8-wire-card{border:1px solid #d8e3ee;border-radius:16px;background:var(--card,#fff);padding:16px;overflow:hidden}
+.v8-wire-feature img,.v8-wire-card img{display:block;width:100%;height:auto;aspect-ratio:16/8;object-fit:cover;border-radius:11px}
+.v8-wire-feature h2{font-size:1.45rem;margin:18px 0 10px}.v8-wire-feature p,.v8-wire-card p{line-height:1.65}
+.v8-wire-link,.v8-wire-card a{color:#0074b9;font-weight:700;text-decoration:none}
+.v8-wire-muted{background:var(--surface,#f4f7fb)}
+.v8-wire-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:22px}
+.v8-wire-card h3{font-size:1.16rem;margin:9px 0}.v8-wire-card img{aspect-ratio:16/9}
+.v8-wire-kicker{display:block;margin-top:14px;font-size:.78rem;font-weight:700;color:#0074b9;letter-spacing:.04em}
+.v8-wire-search{max-width:650px;margin:28px auto 0;display:flex;gap:10px;padding:7px;border:1px solid #d2dfeb;border-radius:100px;background:#fff}
+.v8-wire-search input{flex:1;min-width:0;border:0;background:transparent;padding:9px 16px;outline-offset:3px;color:#18364c}
+.v8-wire-search button{border:0;border-radius:100px;background:#0074b9;color:white;padding:9px 25px;font-weight:700}
+.v8-wire-tabs{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+.v8-wire-tabs button{border:1px solid #d4e0ed;background:var(--card,#fff);color:inherit;border-radius:30px;padding:9px 18px;font-weight:600}
+.v8-wire-tabs button.is-active{background:#004470;color:#fff;border-color:#004470}
+.v8-wire-faq-list{max-width:1050px;margin:auto;display:grid;gap:10px}
+.v8-wire-faq-list details{background:var(--card,#fff);border:1px solid #d4e0ed;border-radius:12px;padding:0 20px}
+.v8-wire-faq-list summary{cursor:pointer;padding:18px 4px;font-weight:650;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.v8-wire-faq-list summary::-webkit-details-marker{display:none}.v8-wire-faq-list summary:after{content:'+';font-size:1.3rem;color:#0074b9}
+.v8-wire-faq-list details[open] summary:after{content:'−'}
+.v8-wire-faq-answer{border-top:1px solid #d4e0ed;padding:15px 4px 20px}.v8-wire-faq-answer p{margin:0;line-height:1.7}
+.v8-wire-help{border:1px solid #94b9d8;border-radius:14px;padding:28px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.v8-wire-help h2{font-size:1.35rem}.v8-wire-help p{margin-bottom:8px}.v8-wire-help a:not(.btn){color:#0074b9}
+.v8-wire-card[hidden],.v8-wire-faq-list details[hidden]{display:none!important}
+[data-theme="dark"] .v8-wire-hero,[data-theme="dark"] .v8-wire-muted,body.dark .v8-wire-hero,body.dark .v8-wire-muted{background:#101b2c}
+[data-theme="dark"] .v8-wire-feature,[data-theme="dark"] .v8-wire-card,[data-theme="dark"] .v8-wire-faq-list details,body.dark .v8-wire-feature,body.dark .v8-wire-card,body.dark .v8-wire-faq-list details{background:#1f3048;color:#f4f8ff;border-color:#3a4d68}
+@media(max-width:760px){.v8-wire-feature-grid,.v8-wire-card-grid{grid-template-columns:1fr}.v8-wire-hero{padding:45px 0}.v8-wire-help{flex-direction:column;align-items:flex-start}.v8-wire-tabs{justify-content:flex-start}.v8-wire-search button{padding:9px 15px}}
