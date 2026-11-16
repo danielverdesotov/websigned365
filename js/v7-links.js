@@ -1,0 +1,2 @@
+/* V7 · Avisos para enlaces todavía no configurados. */
+(() => { document.querySelectorAll('a[href="#sinlink"],a[href="#demo"],a[href="#acceso"],a[href="#administracion"]').forEach(a => a.addEventListener('click', e => {e.preventDefault(); const t=document.querySelector('#toast'); if(t){t.textContent='Este enlace está pendiente de configuración.';t.style.display='block';setTimeout(()=>t.style.display='none',3000);}}));})();
