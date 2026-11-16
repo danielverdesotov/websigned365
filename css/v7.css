@@ -1,0 +1,41 @@
+/* ============================================================
+   SIGNED365 · EVOLUTION V7
+   01. Motivos según el tema · 02. Mockups · 03. Video laptop
+   ============================================================ */
+/* 01. El motivo es decorativo y nunca bloquea las interacciones. */
+#portada, #portada-soluciones, #portada-facturacion {
+    background-image: url('../assets/motivo_b.png');
+    background-repeat: repeat;
+    background-size: 200px 200px;
+}
+:root.dark #portada, :root.dark #portada-soluciones, :root.dark #portada-facturacion {
+    background-image: url('../assets/motivo_a.jfif');
+}
+/* 02. Mockups compartidos del home y de soluciones. */
+#portada .solutions-devices, #portada-soluciones .solutions-devices { min-width:0; }
+#portada .devices-stage, #portada-soluciones .devices-stage { position:relative; isolation:isolate; width:100%; max-width:690px; margin:0 auto; padding:32px 16px 66px 4px; }
+#portada .device-laptop, #portada-soluciones .device-laptop { width:90%; position:relative; filter:drop-shadow(0 22px 20px rgba(9,27,48,.19)); }
+#portada .laptop-screen-bezel, #portada-soluciones .laptop-screen-bezel { background:linear-gradient(145deg,#343c4a,#080c13 70%); border:10px solid #262015; border-bottom-width:13px; border-radius:15px 15px 5px 5px; padding:3px; box-shadow:inset 0 0 0 1px #627184; }
+#portada .laptop-screen, #portada-soluciones .laptop-screen { aspect-ratio:560/360; position:relative; overflow:hidden; background:#fff; border-radius:2px; box-shadow:none; }
+#portada .laptop-screen .hero-slide, #portada-soluciones .laptop-screen .hero-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .65s ease; }
+#portada .laptop-screen .hero-slide.is-active, #portada-soluciones .laptop-screen .hero-slide.is-active { opacity:1; }
+#portada .laptop-hinge, #portada-soluciones .laptop-hinge { width:18%; height:5px; background:#5b6674; margin:auto; border-radius:0 0 5px 5px; }
+#portada .laptop-base, #portada-soluciones .laptop-base { height:18px; margin:0 -8%; background:linear-gradient(#dce3e9 0%,#909aa7 64%,#56616d 92%,#e2d5d5); border-radius:3px 3px 48% 48% / 3px 3px 80% 80%; box-shadow:0 7px 9px rgba(0,0,0,.13); }
+#portada .device-phone, #portada-soluciones .device-phone { position:absolute; z-index:2; right:0; bottom:67px; width:24%; aspect-ratio:9/18.5; padding:8px 5px; background:linear-gradient(120deg,#343e4a,#050910 65%); border:3px solid #252e3c; border-radius:clamp(13px,2.4vw,27px); box-shadow:0 15px 28px rgba(0,0,0,.35),inset 0 0 0 1px #728091; }
+#portada .phone-speaker, #portada-soluciones .phone-speaker { position:absolute; z-index:3; top:5px; left:37%; width:26%; height:4px; background:#4b5663; border-radius:4px; }
+#portada .phone-screen, #portada-soluciones .phone-screen { position:relative; overflow:hidden; width:100%; height:100%; border-radius:clamp(8px,1.6vw,19px); background:#edf4fb; }
+#portada .phone-slide, #portada-soluciones .phone-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:left center; opacity:0; transition:opacity .65s ease; }
+#portada .phone-slide.is-active, #portada-soluciones .phone-slide.is-active { opacity:1; }
+#portada .devices-indicators, #portada-soluciones .devices-indicators { position:absolute; left:0; right:0; bottom:12px; display:flex; justify-content:center; gap:11px; z-index:3; }
+#portada .devices-indicators button, #portada-soluciones .devices-indicators button { width:11px; height:11px; border-radius:50%; border:2px solid #0074b9; background:transparent; padding:0; cursor:pointer; }
+#portada .devices-indicators button.is-active, #portada-soluciones .devices-indicators button.is-active { background:#0074b9; }
+/* 03. Reproductor independiente dentro de una laptop. */
+#portada-facturacion .video-laptop { position:relative; width:100%; max-width:720px; margin:auto; filter:drop-shadow(0 20px 18px rgba(9,27,48,.18)); }
+#portada-facturacion .video-laptop-bezel { border:10px solid #242d37; border-bottom-width:14px; border-radius:17px 17px 5px 5px; padding:4px; background:#0c121a; }
+#portada-facturacion .video-laptop-screen { aspect-ratio:16/10; min-height:0; width:100%; border-radius:4px; overflow:hidden; }
+#portada-facturacion .video-laptop-screen .video-play-button { min-height:0; }
+#portada-facturacion .video-laptop-screen .video-media video, #portada-facturacion .video-laptop-screen .video-media iframe { min-height:0; }
+#portada-facturacion .video-laptop-base { height:18px; margin:0 -6%; border-radius:3px 3px 50% 50%; background:linear-gradient(#e4eaf0,#8995a4 70%,#dce3eb); }
+@media(max-width:767px) { #portada .devices-stage, #portada-soluciones .devices-stage {padding:20px 20px 60px 4px;} #portada .device-phone, #portada-soluciones .device-phone {right:4px;bottom:58px;} }
+@media(max-width:420px) { #portada .laptop-screen-bezel, #portada-soluciones .laptop-screen-bezel {border-width:5px;border-bottom-width:8px;padding:2px;} #portada .laptop-base, #portada-soluciones .laptop-base {height:12px;} #portada .device-phone, #portada-soluciones .device-phone {border-width:2px;padding:5px 3px;} }
+@media(prefers-reduced-motion:reduce) { #portada .hero-slide, #portada-soluciones .hero-slide, #portada .phone-slide, #portada-soluciones .phone-slide {transition:none;} }

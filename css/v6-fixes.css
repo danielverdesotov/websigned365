@@ -1,0 +1,12 @@
+/* SIGNED365 V6 | Correcciones compartidas de contraste */
+:root.dark .card h3, :root.dark .card .review-person strong,
+:root.dark .cards .card h3, :root.dark .resource h3,
+:root.dark .mini-resource h3 { color: #79d5ff !important; }
+:root.dark .internal-hero h1, :root.dark .hero h1 { color: #f1f8ff; }
+:root.dark .internal-hero h1 em, :root.dark .hero h1 em { color: #79d5ff; }
+/* El video de la portada interna es independiente del video del home. */
+.internal-hero-player { width:100%; min-height:340px; aspect-ratio: 760 / 520; border-radius:20px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
+.internal-hero-player .video-play-button { width:100%; min-height:340px; height:100%; }
+.internal-hero-player .video-media { width:100%; height:100%; }
+.internal-hero-player .video-media video, .internal-hero-player .video-media iframe { display:block; width:100%; height:100%; min-height:340px; object-fit:contain; border:0; }
+@media(max-width:600px){.internal-hero-player,.internal-hero-player .video-play-button,.internal-hero-player .video-media video,.internal-hero-player .video-media iframe{min-height:240px;}}

@@ -1,0 +1,115 @@
+/* ==========================================================
+   SIGNED365 · EVOLUTION V4 | Identidad y componentes nuevos
+   ========================================================== */
+
+/* 01. Variables corporativas y tipografía */
+:root {
+    --blue: #0074b9;
+    --deep: #004470;
+    --ink: #142b3b;
+    --muted: #536b7b;
+    --brand-primary: #004470;
+    --brand-secondary: #0074b9;
+    --font-title: 'Montserrat', Arial, sans-serif;
+    --font-body: 'Open Sans', Arial, sans-serif;
+}
+:root.dark {
+    --blue: #46b7f1;
+    --deep: #0074b9;
+    --ink: #f4f8fc;
+    --muted: #c1d1df;
+}
+body { font-family: var(--font-body); }
+h1, h2, h3, h4, h5, h6, .eyebrow, .btn, .plan-label { font-family: var(--font-title); }
+h1, h2, h3 { letter-spacing: -.035em; }
+
+/* 02. Logos oficiales, claros y oscuros */
+.logo { display: inline-flex; width: clamp(122px, 12vw, 180px); min-width: 115px; align-items: center; }
+.brand-picture { display: block; width: 100%; }
+.brand-logo { width: 100%; height: auto; max-height: 67px; object-fit: contain; object-position: left center; }
+.logo-dark { display: none; }
+:root.dark .logo-light { display: none; }
+:root.dark .logo-dark { display: block; }
+.footer .logo-light { display: none; }
+.footer .logo-dark { display: block; }
+.footer .brand-logo { max-height: 92px; }
+
+/* 03. Botones: contraste estable en hover y focus */
+.btn-primary, a.btn-primary { background: #0074b9; border-color: #0074b9; color: #fff !important; }
+.btn-primary:hover, .btn-primary:focus-visible,
+a.btn-primary:hover, a.btn-primary:focus-visible { background: #004470; border-color: #004470; color: #fff !important; }
+.btn-outline { border-color: #0074b9; color: #0074b9 !important; }
+.btn-outline:hover, .btn-outline:focus-visible { background: #004470; border-color: #004470; color: #fff !important; }
+.btn-white, .btn-white:hover, .btn-white:focus-visible { color: #004470 !important; }
+.btn-outline-white:hover, .btn-outline-white:focus-visible { color: #004470 !important; background: #fff; }
+:root.dark .btn-outline { color: #bceaff !important; border-color: #bceaff; }
+:root.dark .btn-outline:hover { color: #004470 !important; background: #bceaff; }
+:focus-visible { outline: 3px solid #4fb4e5; outline-offset: 3px; }
+
+/* 04. Portada: slider con transición fade */
+.hero-slider { position: relative; width: 100%; aspect-ratio: 16 / 10; border-radius: 18px; overflow: hidden; background: var(--card); box-shadow: var(--shadow); border: 1px solid var(--line); }
+.hero-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity .8s ease-in-out; }
+.hero-slide.is-active { opacity: 1; }
+.slider-indicators { position: absolute; bottom: 14px; left: 0; right: 0; display: flex; justify-content: center; gap: 10px; }
+.slider-indicators button { border: 2px solid #0074b9; background: #fff; width: 12px; height: 12px; border-radius: 50%; padding: 0; }
+.slider-indicators button.is-active { background: #0074b9; }
+
+/* 05. Requisitos: pestañas por solicitante */
+.requirements-tabs { display: flex; gap: 6px; background: var(--soft); padding: 5px; border-radius: 12px; margin: 18px 0; }
+.requirements-tabs button { flex: 1; padding: 11px 10px; border: 0; border-radius: 9px; color: var(--ink); background: transparent; font-size: .88rem; }
+.requirements-tabs button.is-active { background: var(--card); box-shadow: 0 2px 9px #00000017; color: var(--blue); font-weight: 700; }
+.requirements-note { font-size: .77rem; }
+[hidden] { display: none !important; }
+
+/* 06. SIGNED DAY: temporizador de los jueves (UTC-5) */
+.signed-day { margin-top: 36px; padding: 24px; background: #e5f5ff; border: 1px solid #0074b9; border-radius: 16px; color: #004470; }
+.signed-day-title { display: flex; flex-wrap: wrap; gap: 14px; font-weight: 800; font-family: var(--font-title); }
+.signed-day-title span { font-family: var(--font-body); font-weight: 400; }
+.signed-day-clock { display: flex; gap: 12px; margin: 18px 0; }
+.signed-day-clock div { display: flex; flex-direction: column; min-width: 84px; align-items: center; padding: 10px; background: #fff; border: 1px solid #c9e5f6; border-radius: 10px; }
+.signed-day-clock strong { font: 800 1.8rem var(--font-title); }
+.signed-day-clock span { font-size: .74rem; }
+.signed-day p { color: #315c76; margin: 0; font-size: .84rem; }
+:root.dark .signed-day { background: #133449; color: #eaf8ff; }
+:root.dark .signed-day-clock div { background: #0c2435; border-color: #386781; }
+:root.dark .signed-day p { color: #c9e8fa; }
+
+/* 07. Casos de uso: reseñas de referencia */
+.review-card { display: flex; flex-direction: column; min-height: 255px; }
+.review-stars { font-size: 1.55rem; letter-spacing: .15em; color: #0074b9; margin-bottom: 16px; }
+.review-card p { flex: 1; }
+.review-person { border-top: 1px solid var(--line); padding-top: 16px; display: flex; gap: 12px; align-items: center; }
+.review-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--soft); color: var(--muted); display: grid; place-items: center; font-size: 1.5rem; flex-shrink: 0; }
+.review-person strong, .review-person small { display: block; }
+.review-person strong { font-size: .84rem; }
+.review-person small { color: var(--muted); font-size: .74rem; }
+
+/* 08. Legal: modal y navegación entre cinco categorías */
+.footer-legal-trigger { display: flex; align-items: center; gap: 9px; border: 0; background: transparent; color: #d5e3f0; padding: 7px 0; font-size: .86rem; }
+.footer-legal-trigger:hover { color: #fff; text-decoration: underline; }
+.legal-modal { position: fixed; inset: 0; margin: auto; width: min(920px, calc(100% - 32px)); max-width: none; max-height: min(88dvh, 800px); overflow: hidden; padding: 0; border: 1px solid var(--line); border-radius: 18px; background: var(--card); color: var(--ink); box-shadow: 0 24px 90px #0006; }
+.legal-modal::backdrop { background: #051626a8; }
+.legal-header { display: flex; align-items: start; justify-content: space-between; padding: 24px 28px 14px; gap: 16px; }
+.legal-header h2 { font-size: 1.45rem; margin: 0 0 6px; }
+.legal-header p { margin: 0; font-size: .85rem; }
+.legal-header button { background: transparent; border: 0; color: var(--ink); font-size: 1.8rem; line-height: 1; }
+.legal-tabs { display: flex; gap: 7px; padding: 12px 28px; overflow-x: auto; border-bottom: 1px solid var(--line); }
+.legal-tabs button { white-space: nowrap; padding: 10px 12px; border: 0; border-radius: 20px; color: var(--ink); background: transparent; font-size: .8rem; }
+.legal-tabs button.is-active { background: var(--soft); color: var(--blue); font-weight: 700; }
+.legal-body { overflow: auto; padding: 24px 28px; max-height: 42dvh; min-height: 190px; }
+.legal-body h3 { font-size: 1.05rem; }
+.legal-footer { display: flex; gap: 14px; align-items: center; justify-content: space-between; padding: 14px 28px; border-top: 1px solid var(--line); }
+.legal-footer small { color: var(--muted); }
+@media (max-width: 767px) {
+    .logo { width: 122px; }
+    .brand-logo { max-height: 56px; }
+    .hero-slider { aspect-ratio: 4 / 3; }
+    .requirements-tabs { flex-direction: column; }
+    .signed-day-clock div { min-width: 68px; }
+    .legal-header, .legal-body, .legal-footer { padding-left: 17px; padding-right: 17px; }
+    .legal-tabs { padding-left: 17px; padding-right: 17px; }
+    .legal-footer { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-slide { transition: none; }
+}
