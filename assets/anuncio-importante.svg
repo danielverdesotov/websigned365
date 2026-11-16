@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="540" viewBox="0 0 1080 540">
+<defs>
+    <linearGradient id="g" x2="1" y2="1"><stop stop-color="rgb(8 26 45)"/><stop offset="1" stop-color="#02141b"/></linearGradient>
+</defs>
+<rect width="1080" height="540" rx="28" fill="url(#g)"/>
+    <circle cx="1020" cy="120" r="230" fill="#fff" opacity=".07"/>
+    <circle cx="1100" cy="450" r="260" fill="#fff" opacity=".07"/>
+    <text x="80" y="125" font-size="37" font-family="Arial,sans-serif" fill="#d7f5ff" font-weight="bold">
+        MUY PRONTO
+    </text>
+    <text x="80" y="245" font-size="68" font-family="Arial,sans-serif" fill="#fff" font-weight="bold">
+        ESTE 9 DE DICIEMBRE,
+    </text>
+    <text x="80" y="325" font-size="68" font-family="Arial,sans-serif" fill="#f4f800ce" font-weight="bold">
+        TU FIRMA HACE MÁS...
+    </text>
+    <text x="80" y="405" font-size="27" font-family="Arial,sans-serif" fill="#e5f7ff">
+        Reserva un lugar
+    </text>
+    <rect x="80" y="450" width="320" height="5" rx="2" fill="#6fe0ff"/>
+</svg>
