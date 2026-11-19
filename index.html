@@ -22,17 +22,13 @@
     <link href="assets/favicon.png" rel="icon"/>
     <link href="css/v6-fixes.css" rel="stylesheet">
     </link><link href="css/v7.css" rel="stylesheet"/>
-
-    <!-- CLARITY -->   
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "zb1salco1y");
-    </script>
+    <!-- Microsoft Clarity se carga tras aceptar cookies analíticas. -->
     <!-- V8 · Popup fade y ajustes visuales -->
     <link rel="stylesheet" href="css/v8.css"/>
+    <!-- Estado temporal de los planes: retirar esta hoja cuando se activen -->
+    <link rel="stylesheet" href="css/planes-proximamente.css"/>
+    <!-- Cookies: estilos compartidos -->
+    <link rel="stylesheet" href="css/cookies.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">
@@ -316,7 +312,7 @@
                         Regístrate !Ahora!
                     </a>
                 </article>
-                <article class="card plan featured" data-reveal="">
+                <article class="card plan plan-proximamente featured" data-reveal="" data-aviso="MUY PRONTO" inert>
                     <span class="plan-label">
                         EL MÁS SOLICITADO
                     </span>
@@ -335,7 +331,7 @@
                         Adquirir !Ahora!
                     </a>
                 </article>
-                <article class="card plan" data-reveal="">
+                <article class="card plan plan-proximamente" data-reveal="" data-aviso="MUY PRONTO" inert>
                     <span class="plan-label">
                         PARA TU NEGOCIO
                     </span>
@@ -925,5 +921,8 @@
 <script defer src="js/announcement-shared.js"></script>
 <script defer src="js/announcement.js"></script>
 
+<!-- Cookies: configuración y gestor compartidos -->
+<script defer src="js/cookies-config.js"></script>
+<script defer src="js/cookies.js"></script>
 </body>
 </html>

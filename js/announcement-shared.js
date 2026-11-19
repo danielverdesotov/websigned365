@@ -9,8 +9,8 @@
     const CONFIG = {
         title: 'Información importante',
         kicker: 'SIGNED365 TE INFORMA',
-        image: 'popup/popup-reservacion.png',
-        imageAlt: 'Invitación de SIGNED365 para reservar un lugar en el lanzamiento',
+        image: 'popup/popup-9dic.png',
+        imageAlt: 'Anuncio importante de SIGNED365',
         url: 'https://evento.signed365.com/',
         note: '.:: Transmisión Abierta ::.',
         delay: 5000

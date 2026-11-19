@@ -1,0 +1,58 @@
+/* ============================================================
+   SIGNED365 V8 · Estado temporal de planes no disponibles
+   Activación: clase plan-proximamente + atributo inert en la tarjeta.
+   Texto editable: data-aviso="MUY PRONTO" en index.html.
+   Para activar un plan, quitar ambos de su <article>.
+   ============================================================ */
+
+#planes .plan.plan-proximamente {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* Difumina únicamente el contenido de las tarjetas pendientes. */
+#planes .plan.plan-proximamente > * {
+    filter: blur(3px);
+    opacity: 0.48;
+    user-select: none;
+}
+
+/* Banda legible en ambos temas; no depende de JavaScript. */
+#planes .plan.plan-proximamente::after {
+    content: attr(data-aviso);
+    position: absolute;
+    z-index: 2;
+    top: 49%;
+    left: -8%;
+    width: 116%;
+    padding: 13px 12px;
+    transform: rotate(-13deg);
+    background: linear-gradient(105deg, #004470, #0074b9 60%, #004470);
+    border-top: 2px solid rgba(255,255,255,.45);
+    border-bottom: 2px solid rgba(255,255,255,.45);
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+    font-size: clamp(1rem, 1.6vw, 1.35rem);
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.25);
+    box-shadow: 0 6px 20px rgba(0,0,0,.16);
+    pointer-events: auto;
+}
+
+:root.dark #planes .plan.plan-proximamente::after {
+    background: linear-gradient(105deg, #005a91, #0074b9 60%, #005a91);
+    border-color: rgba(153,220,255,.6);
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    #planes .plan.plan-proximamente::after {
+        top: 50%;
+        padding: 12px 8px;
+        transform: rotate(-10deg);
+        letter-spacing: .09em;
+    }
+}
