@@ -1,0 +1,26 @@
+/* SIGNED365 · Imágenes de funciones · Compartido por páginas internas. */
+.feature-row > img.platform-feature-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: 2px solid rgba(0, 116, 185, 0.90);
+    border-radius: 18px;
+    background: rgba(0, 181, 204, .055);
+    box-shadow: 0 0 0 5px rgba(0, 181, 204, .07),
+                0 14px 38px rgba(0, 91, 117, .13);
+}
+:root.dark .feature-row > img.platform-feature-image,
+body.dark .feature-row > img.platform-feature-image,
+[data-theme="dark"] .feature-row > img.platform-feature-image {
+    border-color: rgba(80, 218, 235, 0.90);
+    background: rgba(58, 184, 208, .09);
+    box-shadow: 0 0 0 5px rgba(58, 184, 208, .09),
+                0 14px 38px rgba(0, 0, 0, .28);
+}
+@media (max-width: 780px) {
+    .feature-row > img.platform-feature-image {
+        max-width: 100%;
+        border-radius: 13px;
+    }
+}

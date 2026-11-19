@@ -41,3 +41,29 @@ body.sd-cookie-modal-open { overflow:hidden; }
     .sd-cookie-dialog-footer .sd-cookie-btn { flex:1 1 100%; }
     .sd-cookie-reopen { bottom:6px; left:6px; }
 }
+
+/* Ajuste móvil: el acceso a privacidad se ubica después del pie de página,
+   sin superponerse a los enlaces ni a la barra de navegación del teléfono. */
+@media (max-width: 780px) {
+    #sd-cookie-root { position: static; }
+    #sd-cookie-root .sd-cookie-reopen:not([hidden]) {
+        position: static;
+        display: inline-flex;
+        margin: 10px 12px max(14px, env(safe-area-inset-bottom));
+        width: auto;
+        max-width: calc(100% - 24px);
+        min-height: 36px;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+    }
+    #sd-cookie-root .sd-cookie-banner {
+        bottom: max(12px, env(safe-area-inset-bottom));
+        max-height: min(78dvh, 600px);
+        overscroll-behavior: contain;
+    }
+    #sd-cookie-root .sd-cookie-dialog {
+        max-height: min(88dvh, 760px);
+        overscroll-behavior: contain;
+    }
+}
