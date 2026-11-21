@@ -29,6 +29,26 @@
     <link rel="stylesheet" href="css/planes-proximamente.css"/>
     <!-- Cookies: estilos compartidos -->
     <link rel="stylesheet" href="css/cookies.css"/>
+    <!-- Parallax exclusivo de la portada del INDEX -->
+    <link rel="stylesheet" href="css/hero-parallax.css"/>
+    <!-- Parallax reutilizable del fondo del footer -->
+    <link rel="stylesheet" href="css/footer-parallax.css"/>
+    <!-- Fondo independiente de la portada del INDEX: cambiar aquí las imágenes -->
+    <style>
+        /* Tema claro: modificar únicamente esta ruta cuando sea necesario. */
+        #portada.hero {
+            background-image: url('assets/img/fondo-mapaB.png') !important;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        /* Tema oscuro: independiente del fondo de las páginas internas. */
+        :root.dark #portada.hero {
+            background-image: url('assets/img/fondo-mapaN.png') !important;
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    </style>
 </head>
 <body>
 <a class="skip" href="#contenido">
@@ -81,7 +101,7 @@
 <main id="contenido">
 
     <!-- 02. PORTADA -->
-    <section class="hero section" id="portada">
+    <section class="hero section hero-parallax" id="portada">
         <div class="container hero-grid">
             <div data-reveal="">
             <span class="eyebrow">
@@ -295,13 +315,13 @@
             <div class="cards three">
                 <article class="card plan" data-reveal="">
                     <span class="plan-label">
-                        SIN COSTO
+                        PARA TODAS LAS FIRMAS
                     </span>
                     <h3>
-                        Plan básico
+                        Plan Libre
                     </h3>
                     <p>
-                        Explora las funciones disponibles en la modalidad gratuita.
+                        Tu firma hace más, todo lo esencial para arrancar sin costo sin ataduras.
                     </p>
                     <ul>
                         <li>Registro de usuario</li>
@@ -317,10 +337,10 @@
                         EL MÁS SOLICITADO
                     </span>
                     <h3>
-                        Plan premium
+                        Plan Evolución
                     </h3>
                     <p>
-                        Herramientas adicionales para tu gestión digital.
+                        Multiplica tu herramienta con funciones exclusivas para gestionar más clientes y contratos.
                     </p>
                     <ul>
                         <li>Experiencia sin publicidad</li>
@@ -333,13 +353,13 @@
                 </article>
                 <article class="card plan plan-proximamente" data-reveal="" data-aviso="PROXIMAMENTE" inert>
                     <span class="plan-label">
-                        PARA TU NEGOCIO
+                        EL PODER DE LA IA
                     </span>
                     <h3>
-                        Plan corporativo
+                        Plan SinergIA
                     </h3>
                     <p>
-                        Personaliza tu plan según las necesidades.
+                        Un asistente tributario 24/7 que te guía con tus facturas, impuestos contratos y hace el trabajo cotidiano por ti.
                     </p>
                     <ul>
                         <li>Opciones de vigencia</li>
@@ -736,7 +756,7 @@
 </main>
 
 <!-- 11. PIE DE PÁGINA -->
-<footer class="footer" id="contacto">
+<footer class="footer footerfondo" id="contacto">
     <div class="container footer-grid">
         <div>
             <a class="logo" href="#inicio">
@@ -920,6 +940,12 @@
 <script defer="True" src="js/v7-devices.js"></script>    
 <script defer src="js/announcement-shared.js"></script>
 <script defer src="js/announcement.js"></script>
+
+<!-- Parallax exclusivo de la portada del INDEX -->
+<script defer src="js/hero-parallax.js"></script>
+
+<!-- Parallax reutilizable del fondo del footer -->
+<script defer src="js/footer-parallax.js"></script>
 
 <!-- Cookies: configuración y gestor compartidos -->
 <script defer src="js/cookies-config.js"></script>

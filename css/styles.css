@@ -950,3 +950,20 @@ nav {
 }
 
 
+/* ============================================================
+   SIGNED365 | Fondo del Footer
+   Imagen con capa oscura al 85 %
+   ============================================================ */
+
+.footerfondo {
+    background-image:
+        linear-gradient(
+            rgba(15, 25, 45, 0.75),
+            rgba(15, 25, 45, 0.75)
+        ),
+        url("../assets/img/fondo-firmaN.png");
+
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 140% 115%;
+}

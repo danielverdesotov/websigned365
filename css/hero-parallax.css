@@ -1,0 +1,27 @@
+/* ============================================================
+   SIGNED365 | Parallax de portada (solo index.html)
+   Las rutas de las imágenes se mantienen en el <style> del index.
+   ============================================================ */
+
+#portada.hero.hero-parallax {
+    --hero-parallax-offset: 0px;
+    background-attachment: scroll !important;
+    background-position: center calc(2% + var(--hero-parallax-offset)) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+/* En pantallas pequeñas se limita el movimiento para evitar recortes. */
+@media (max-width: 767.98px) {
+    #portada.hero.hero-parallax {
+        background-position: center calc(98% + var(--hero-parallax-offset)) !important;
+    }
+}
+
+/* Accesibilidad: desactivar desplazamiento visual si se solicita. */
+@media (prefers-reduced-motion: reduce) {
+    #portada.hero.hero-parallax {
+        --hero-parallax-offset: 0px !important;
+        background-position: center center !important;
+    }
+}
