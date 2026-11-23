@@ -1,0 +1,18 @@
+/* ============================================================
+   SIGNED365 | Parallax del fondo del footer
+   Hoja compartida: index.html y páginas internas.
+   Se carga DESPUÉS de css/styles.css.
+   ============================================================ */
+
+.footerfondo {
+    /* Se conservan la imagen y la capa oscura definidas en styles.css. */
+    background-position: right bottom, right var(--footer-parallax-y, 300%);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100% 100%, 140% 115%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footerfondo {
+        background-position: right bottom, right bottom;
+    }
+}

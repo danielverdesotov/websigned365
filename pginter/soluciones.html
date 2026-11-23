@@ -43,6 +43,8 @@
     <link rel="stylesheet" href="../css/v8.css"/>
     <!-- Cookies: estilos compartidos -->
     <link rel="stylesheet" href="../css/cookies.css"/>
+    <!-- Efecto parallax para el footer -->
+    <link rel="stylesheet" href="../css/footer-parallax.css"/>
 </head>
 <body>
 <a class="skip" href="#contenido">
@@ -65,7 +67,7 @@
                             Inicio
                      </a>
                      <div class="nav-dropdown">
-                            <a aria-haspopup="true" class="nav-dropdown-link" href="../index.html#soluciones">
+                            <a aria-haspopup="true" class="nav-dropdown-link">
                                    Soluciones
                             </a>
                             <button aria-controls="firma-submenu" aria-expanded="false" aria-label="Soluciones SIGNED365" class="nav-dropdown-toggle" type="button">
@@ -112,488 +114,483 @@
 
 <!-- 02. CONTENIDO PRINCIPAL -->
 <main id="contenido">
-<!-- 01. PORTADA DE SOLUCIONES -->
-<section class="section internal-hero" id="portada-soluciones">
-<div class="container internal-hero-grid">
-<div data-reveal="">
-<span class="eyebrow">
-       SOLUCIONES SIGNED365
-      </span>
-<h1>
-       Soluciones
-       <em>
-        para tu negocio
-       </em>
-</h1>
-<p>
-       Firma documentos, emite comprobantes electrónicos y organiza tus gestiones desde una misma plataforma.
-      </p>
-<div class="actions">
-<a class="btn btn-primary" href="https://appsigned365.corporaciondfl.com/registro" rel="noopener" target="_blank">
-        Prueba SIGNED365 gratis
-       </a>
-<a class="btn btn-outline" href="https://wa.me/593997367365?text=Hola%2C%20quisiera%20solicitar%20una%20demo%20de%20SIGNED365" rel="noopener" target="_blank">
-        Solicita una demo
-       </a>
-</div>
-</div>
-<div class="internal-hero-visual solutions-devices" data-reveal="">
-<div aria-label="Vistas de la plataforma SIGNED365 en computador y celular" class="devices-stage">
-<!-- Computador: conserva las clases originales del slider V4 -->
-<div class="device-laptop">
-<div class="laptop-screen-bezel">
-<div aria-label="Capturas de SIGNED365" class="laptop-screen hero-slider">
-<img alt="SIGNED365: vista de emisión de facturas" class="hero-slide is-active" fetchpriority="high" src="../assets/plataforma/soluci_01.png"/>
-<img alt="SIGNED365: guía de emisión" class="hero-slide" loading="lazy" src="../assets/plataforma/soluci_02.png"/>
-<img alt="SIGNED365: registro de clientes" class="hero-slide" loading="lazy" src="../assets/plataforma/soluci_03.png"/>
-</div>
-</div>
-<div aria-hidden="true" class="laptop-hinge"></div>
-<div aria-hidden="true" class="laptop-base"></div>
-</div>
-<!-- Celular: sincronizado con el slider del computador -->
-<div aria-label="Vista adaptable de las capturas en celular" class="device-phone">
-<div aria-hidden="true" class="phone-speaker"></div>
-<div class="phone-screen">
-<img alt="Captura adaptada de SIGNED365" class="phone-slide is-active" src="../assets/plataforma/soluci_01.png"/>
-<img alt="Captura adaptada de SIGNED365" class="phone-slide" loading="lazy" src="../assets/plataforma/soluci_02.png"/>
-<img alt="Captura adaptada de SIGNED365" class="phone-slide" loading="lazy" src="../assets/plataforma/soluci_03.png"/>
-</div>
-</div>
-<!-- Los indicadores controlan el slider existente cada 3 segundos -->
-<div aria-label="Seleccionar captura" class="slider-indicators devices-indicators">
-<button aria-current="true" aria-label="Captura 1" class="is-active" type="button"></button>
-<button aria-label="Captura 2" type="button"></button>
-<button aria-label="Captura 3" type="button"></button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 02. ELIGE TU SOLUCIÓN -->
-<section class="section" id="elige-solucion">
-<div class="container">
-<div class="section-heading" data-reveal="">
-<span class="eyebrow">
-       HERRAMIENTAS PARA TI
-      </span>
-<h2>
-       Elige tu solución
-      </h2>
-<p>
-       Encuentra la herramienta que necesitas para tus gestiones digitales.
-      </p>
-</div>
-<div class="cards three">
-<article class="card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ▤
-       </div>
-<h3>
-        Facturación electrónica
-       </h3>
-<p>
-        Emite y administra comprobantes electrónicos desde una misma plataforma.
-       </p>
-<a href="factuelectro.html">
-        Ver más →
-       </a>
-</article>
-<article class="card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ✍
-       </div>
-<h3>
-        Firma de documentos
-       </h3>
-<p>
-        Firma archivos PDF y simplifica la gestión documental.
-       </p>
-<a href="firmadoc.html">
-        Ver más →
-       </a>
-</article>
-<article class="card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ▣
-       </div>
-<h3>
-        Firmar contratos
-       </h3>
-<p>
-        Prepara y firma acuerdos con un flujo digital más sencillo.
-       </p>
-<a href="#sinlink">
-        Ver más →
-       </a>
-</article>
-</div>
-</div>
-</section>
-<!-- 03. BENEFICIOS -->
-<section class="section soft" id="beneficios">
-<div class="container">
-<div class="section-heading" data-reveal="">
-<span class="eyebrow">
-       VENTAJAS
-      </span>
-<h2>
-       Beneficios
-      </h2>
-<p>
-       Herramientas disponibles para simplificar el trabajo diario.
-      </p>
-</div>
-<div class="cards solutions-benefits">
-<article class="card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ▤
-       </div>
-<h3>
-        Facturación en línea
-       </h3>
-<p>
-        Emite y consulta comprobantes desde tu cuenta.
-       </p>
-</article>
-<article class="card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ✍
-       </div>
-<h3>
-        Firma digital integrada
-       </h3>
-<p>
-        Firma documentos electrónicos desde la plataforma.
-       </p>
-</article>
-<article class="card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ▣
-       </div>
-<h3>
-        Plantillas personalizadas
-       </h3>
-<p>
-        Prepara documentos recurrentes con mayor facilidad.
-       </p>
-</article>
-<article class="card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ▧
-       </div>
-<h3>
-        Gestión de documentos
-       </h3>
-<p>
-        Mantén tus archivos y gestiones organizados.
-       </p>
-</article>
-<article class="card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ⚙
-       </div>
-<h3>
-        Automatización
-       </h3>
-<p>
-        Reduce tareas repetitivas con las funciones disponibles.
-       </p>
-</article>
-<article class="card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ⌁
-       </div>
-<h3>
-        Acceso desde cualquier dispositivo
-       </h3>
-<p>
-        Utiliza una interfaz adaptable a diferentes pantallas.
-       </p>
-</article>
-<article class="card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ◎
-       </div>
-<h3>
-        Mayor y mejor control
-       </h3>
-<p>
-        Consulta tus operaciones y documentos desde tu cuenta.
-       </p>
-</article>
-<article class="card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ◷
-       </div>
-<h3>
-        Ahorro de tiempo y costos
-       </h3>
-<p>
-        Centraliza tareas digitales habituales en un solo lugar.
-       </p>
-</article>
-</div>
-</div>
-</section>
-<!-- 04. CASOS DE USO -->
-<section class="section" id="casos">
-<div class="container">
-<div class="section-heading" data-reveal="">
-<span class="eyebrow">
-       APLICACIONES
-      </span>
-<h2>
-       Casos de uso
-      </h2>
-<p>
-       Ejemplos de cómo utilizar las herramientas de SIGNED365.
-      </p>
-</div>
-<div class="cards three">
-<article class="card review-card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ▤
-       </div>
-<h3>
-        Profesionales independientes
-       </h3>
-<p>
-        Emite comprobantes y organiza tus documentos de trabajo.
-       </p>
-</article>
-<article class="card review-card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ✍
-       </div>
-<h3>
-        Emprendimientos
-       </h3>
-<p>
-        Gestiona la facturación y firma documentos desde una misma cuenta.
-       </p>
-</article>
-<article class="card review-card" data-reveal="">
-<div aria-hidden="true" class="symbol">
-        ▣
-       </div>
-<h3>
-        Equipos de trabajo
-       </h3>
-<p>
-        Prepara contratos y documentos para sus procesos habituales.
-       </p>
-</article>
-</div>
-</div>
-</section>
-<!-- 05. LLAMADO A LA ACCIÓN -->
-<section class="cta" id="soporte">
-<div class="container" data-reveal="">
-<h2>
-      Comienza con SIGNED365
-     </h2>
-<p>
-      Elige las herramientas que necesitas para tu gestión digital.
-     </p>
-<div class="actions centered">
-<a class="btn btn-white" href="https://appsigned365.corporaciondfl.com/registro" rel="noopener" target="_blank">
-       Prueba SIGNED365 gratis
-      </a>
-<a class="btn btn-outline-white" href="https://wa.me/593997367365?text=Hola%2C%20quisiera%20solicitar%20una%20demo%20de%20SIGNED365" rel="noopener" target="_blank">
-       Solicita una demo
-      </a>
-</div>
-<p>
-      ¿Necesitas ayuda?
-      <a href="https://form.jotform.com/signed365/soporte" rel="noopener" target="_blank">
-       Soporte →
-      </a>
-</p>
-</div>
-</section>
+       <!-- 01. PORTADA DE SOLUCIONES -->
+       <section class="section internal-hero" id="portada-soluciones">
+              <div class="container internal-hero-grid">
+                     <div data-reveal="">
+                            <span class="eyebrow">
+                                   SOLUCIONES SIGNED365
+                            </span>
+                            <h1>
+                                   Soluciones
+                                   <em>
+                                   para tu negocio
+                                   </em>
+                            </h1>
+                            <p>
+                                   Firma documentos, emite comprobantes electrónicos y organiza tus gestiones desde una misma plataforma.
+                            </p>
+                            <div class="actions">
+                                   <a class="btn btn-primary" href="https://appsigned365.corporaciondfl.com/registro" rel="noopener" target="_blank">
+                                          Prueba SIGNED365 gratis
+                                   </a>
+                                   <a class="btn btn-outline" href="https://wa.me/593997367365?text=Hola%2C%20quisiera%20solicitar%20una%20demo%20de%20SIGNED365" rel="noopener" target="_blank">
+                                          Solicita una demo
+                                   </a>
+                            </div>
+                     </div>
+                     <div class="internal-hero-visual solutions-devices" data-reveal="">
+                            <div aria-label="Vistas de la plataforma SIGNED365 en computador y celular" class="devices-stage">
+                                   <!-- Computador: conserva las clases originales del slider V4 -->
+                                   <div class="device-laptop">
+                                          <div class="laptop-screen-bezel">
+                                                 <div aria-label="Capturas de SIGNED365" class="laptop-screen hero-slider">
+                                                        <img alt="SIGNED365: vista de emisión de facturas" class="hero-slide is-active" fetchpriority="high" src="../assets/plataforma/slider_01.png"/>
+                                                        <img alt="SIGNED365: guía de emisión" class="hero-slide" loading="lazy" src="../assets/plataforma/slider_02.png"/>
+                                                        <img alt="SIGNED365: registro de clientes" class="hero-slide" loading="lazy" src="../assets/plataforma/slider_03.png"/>
+                                                 </div>
+                                          </div>
+                                          <div aria-hidden="true" class="laptop-hinge"></div>
+                                          <div aria-hidden="true" class="laptop-base"></div>
+                                   </div>
+                                   <!-- Celular: sincronizado con el slider del computador -->
+                                   <div aria-label="Vista adaptable de las capturas en celular" class="device-phone">
+                                          <div aria-hidden="true" class="phone-speaker"></div>
+                                          <div class="phone-screen">
+                                                 <img alt="Captura adaptada de SIGNED365" class="phone-slide is-active" src="../assets/plataforma/slider_01.png"/>
+                                                 <img alt="Captura adaptada de SIGNED365" class="phone-slide" loading="lazy" src="../assets/plataforma/slider_02.png"/>
+                                                 <img alt="Captura adaptada de SIGNED365" class="phone-slide" loading="lazy" src="../assets/plataforma/slider_03.png"/>
+                                          </div>
+                                   </div>
+                                   <!-- Los indicadores controlan el slider existente cada 3 segundos -->
+                                   <div aria-label="Seleccionar captura" class="slider-indicators devices-indicators">
+                                          <button aria-current="true" aria-label="Captura 1" class="is-active" type="button"></button>
+                                          <button aria-label="Captura 2" type="button"></button>
+                                          <button aria-label="Captura 3" type="button"></button>
+                                   </div>
+                            </div>
+                     </div>
+              </div>
+       </section>
+       <!-- 02. ELIGE TU SOLUCIÓN -->
+       <section class="section" id="elige-solucion">
+              <div class="container">
+                     <div class="section-heading" data-reveal="">
+                            <span class="eyebrow">
+                                   HERRAMIENTAS PARA TI
+                            </span>
+                            <h2>
+                                   Elige tu solución
+                            </h2>
+                            <p>
+                                   Encuentra la herramienta que necesitas para tus gestiones digitales.
+                            </p>
+                     </div>
+                     <div class="cards three">
+                            <article class="card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ▤
+                                   </div>
+                                   <h3>
+                                          Facturación electrónica
+                                   </h3>
+                                   <p>
+                                          Emite y administra comprobantes electrónicos desde una misma plataforma.
+                                   </p>
+                                   <a href="factuelectro.html">
+                                          Ver más →
+                                   </a>
+                            </article>
+                            <article class="card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ✍
+                                   </div>
+                                   <h3>
+                                          Firma de documentos
+                                   </h3>
+                                   <p>
+                                          Firma archivos PDF y simplifica la gestión documental.
+                                   </p>
+                                   <a href="firmadoc.html">
+                                          Ver más →
+                                   </a>
+                            </article>
+                            <article class="card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ▣
+                                   </div>
+                                   <h3>
+                                          Firmar contratos
+                                   </h3>
+                                   <p>
+                                          Prepara y firma acuerdos con un flujo digital más sencillo.
+                                          </p>
+                                   <a href="#sinlink">
+                                          Ver más →
+                                   </a>
+                            </article>
+                     </div>
+              </div>
+       </section>
+       <!-- 03. BENEFICIOS -->
+       <section class="section soft" id="beneficios">
+              <div class="container">
+                     <div class="section-heading" data-reveal="">
+                            <span class="eyebrow">
+                                   VENTAJAS
+                            </span>
+                            <h2>
+                                   Beneficios
+                            </h2>
+                            <p>
+                                   Herramientas disponibles para simplificar el trabajo diario.
+                            </p>
+                     </div>
+                     <div class="cards solutions-benefits">
+                            <article class="card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ▤
+                                   </div>
+                                   <h3>
+                                          Facturación en línea
+                                   </h3>
+                                   <p>
+                                          Emite y consulta comprobantes desde tu cuenta.
+                                   </p>
+                            </article>
+                            <article class="card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ✍
+                                   </div>
+                                   <h3>
+                                          Firma digital integrada
+                                   </h3>
+                                   <p>
+                                          Firma documentos electrónicos desde la plataforma.
+                                   </p>
+                            </article>
+                            <article class="card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ▣
+                                   </div>
+                                   <h3>
+                                          Plantillas personalizadas
+                                   </h3>
+                                   <p>
+                                          Prepara documentos recurrentes con mayor facilidad.
+                                   </p>
+                            </article>
+                            <article class="card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ▧
+                                   </div>
+                                   <h3>
+                                          Gestión de documentos
+                                   </h3>
+                                   <p>
+                                          Mantén tus archivos y gestiones organizados.
+                                   </p>
+                            </article>
+                            <article class="card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ⚙
+                                   </div>
+                                   <h3>
+                                          Automatización
+                                   </h3>
+                                   <p>
+                                          Reduce tareas repetitivas con las funciones disponibles.
+                                   </p>
+                            </article>
+                            <article class="card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ⌁
+                                   </div>
+                                   <h3>
+                                          Acceso desde cualquier dispositivo
+                                   </h3>
+                                   <p>
+                                          Utiliza una interfaz adaptable a diferentes pantallas.
+                                   </p>
+                            </article>
+                            <article class="card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ◎
+                                   </div>
+                                   <h3>
+                                          Mayor y mejor control
+                                   </h3>
+                                   <p>
+                                          Consulta tus operaciones y documentos desde tu cuenta.
+                                   </p>
+                            </article>
+                            <article class="card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ◷
+                                   </div>
+                                   <h3>
+                                          Ahorro de tiempo y costos
+                                   </h3>
+                                   <p>
+                                          Centraliza tareas digitales habituales en un solo lugar.
+                                   </p>
+                            </article>
+                     </div>
+              </div>
+       </section>
+       <!-- 04. CASOS DE USO -->
+       <section class="section" id="casos">
+              <div class="container">
+                     <div class="section-heading" data-reveal="">
+                            <span class="eyebrow">
+                                   APLICACIONES
+                            </span>
+                            <h2>
+                                   Casos de uso
+                            </h2>
+                            <p>
+                                   Ejemplos de cómo utilizar las herramientas de SIGNED365.
+                            </p>
+                     </div>
+                     <div class="cards three">
+                            <article class="card review-card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ▤
+                                   </div>
+                                   <h3>
+                                          Profesionales independientes
+                                   </h3>
+                                   <p>
+                                          Emite comprobantes y organiza tus documentos de trabajo.
+                                   </p>
+                            </article>
+                            <article class="card review-card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ✍
+                                   </div>
+                                   <h3>
+                                          Emprendimientos
+                                   </h3>
+                                   <p>
+                                          Gestiona la facturación y firma documentos desde una misma cuenta.
+                                   </p>
+                            </article>
+                            <article class="card review-card" data-reveal="">
+                                   <div aria-hidden="true" class="symbol">
+                                          ▣
+                                   </div>
+                                   <h3>
+                                          Equipos de trabajo
+                                   </h3>
+                                   <p>
+                                          Prepara contratos y documentos para sus procesos habituales.
+                                   </p>
+                            </article>
+                     </div>
+              </div>
+       </section>
+       <!-- 05. LLAMADO A LA ACCIÓN -->
+       <section class="cta" id="soporte">
+              <div class="container" data-reveal="">
+                     <h2>
+                     Comienza con SIGNED365
+                     </h2>
+                     <p>
+                     Elige las herramientas que necesitas para tu gestión digital.
+                     </p>
+                     <div class="actions centered">
+                            <a class="btn btn-white" href="https://appsigned365.corporaciondfl.com/registro" rel="noopener" target="_blank">
+                                   Prueba SIGNED365 gratis
+                            </a>
+                            <a class="btn btn-outline-white" href="https://wa.me/593997367365?text=Hola%2C%20quisiera%20solicitar%20una%20demo%20de%20SIGNED365" rel="noopener" target="_blank">
+                                   Solicita una demo
+                            </a>
+                     </div>
+                     <p>
+                            ¿Necesitas ayuda?
+                            <a href="https://form.jotform.com/signed365/soporte" rel="noopener" target="_blank">
+                                   Soporte →
+                            </a>
+                     </p>
+              </div>
+       </section>
 </main>
 <!-- 10. PIE DE PÁGINA -->
-<footer class="footer" id="contacto">
-<div class="container footer-grid">
-<div>
-<a class="logo" href="../index.html">
-<picture class="brand-picture">
-<img alt="SIGNED365 · Más que una firma" class="brand-logo logo-light" src="../assets/logo-color.png"/>
-<img alt="" aria-hidden="true" class="brand-logo logo-dark" src="../assets/logo-blanco.png"/>
-</picture>
-</a>
-<p>
-      Av. 12 de Octubre N24-739 y Av. Colón, Edificio Boreal, Of. 410, 4to Piso, Torre A. CP:170523.
-     </p>
-</div>
-<div>
-<h3>
-      Soluciones
-     </h3>
-<a href="soluciones.html">
-      Facturación
-     </a>
-<a href="../index.html#firma">
-      Firma electrónica
-     </a>
-<a href="../index.html#planes">
-      Planes
-     </a>
-</div>
-<div>
-<h3>
-      Recursos
-     </h3>
-<a href="../index.html#funciona">
-      Cómo funciona
-     </a>
-<a href="recursos.html">
-      Blog y guías
-     </a>
-<a href="../index.html#casos">
-      Casos de uso
-     </a>
-</div>
-<div id="ayuda">
-<h3>
-      Ayuda
-     </h3>
-<a href="faq.html">
-      Preguntas frecuentes
-     </a>
-<a href="https://wa.me/593997367365?text=Hola%2C%20necesito%20chat%20con%20un%20asesor%20de%20SIGNED365,%20escribo%20desde%20la%20web." target="_blank">
-      Chat con asesor
-     </a>
-<a href="https://form.jotform.com/signed365/soporte" rel="noopener" target="_blank">
-      Crear ticket
-     </a>
-<button aria-controls="legal-modal" aria-haspopup="dialog" class="footer-legal-trigger" id="legal-open" type="button">
-<span aria-hidden="true">
-       ⚖
-      </span>
-      Legal
-     </button>
-</div>
-<div>
-<h3>
-      Contacto
-     </h3>
-<p>
-      Ventas: +593997367365
-      <br/>
-      Soporte: +593989107058
-      <br/>
-      ventas@corporaciondfl.com
-      <br/>
-</p>
-<a href="https://www.corporaciondfl.com/" rel="noopener" target="_blank">
-      Visitar Corporación DFL →
-     </a>
-<!-- LINK DE ADMINISTRACIÓN 
-                    <a href="#administracion" id="admin-link">
-                        Administración
-                    </a>
-                    -->
-</div>
-</div>
-<div class="container footer-bottom">
-<span>
-     ©
-     <span id="year">
-      2026
-     </span>
-     SIGNED365. Todos los derechos reservados.
-    </span>
-<span>
-     Desarrollado por DAV2
-    </span>
-</div>
+<footer class="footer footerfondo" id="contacto">
+    <div class="container footer-grid">
+        <div>
+            <a class="logo" href="#">
+                <picture class="brand-picture">
+                    <img alt="SIGNED365 · Más que una firma" class="brand-logo logo-light" src="../assets/logo-color.png">
+                        <img alt="" aria-hidden="true" class="brand-logo logo-dark" src="../assets/logo-blanco.png">
+                        </img>
+                    </img>
+                </picture>
+            </a>
+            <p>
+                Av. 12 de Octubre N24-739 y Av. Colón, Edificio Boreal, Of. 410, 4to Piso, Torre A. CP:170523.
+            </p>
+        </div>
+        <div>
+            <h3>
+                Soluciones
+            </h3>
+            <a href="factuelectro.html">
+                Facturación
+            </a>
+            <a href="../index.html#firma">
+                Firma electrónica
+            </a>
+            <a href="../index.html#planes">
+                Planes
+            </a>
+        </div>
+        <div>
+            <h3>
+                Recursos
+            </h3>
+            <a href="../index.html#funciona">
+                Cómo funciona
+            </a>
+            <a href="../index.html#recursos">
+                Blog y guías
+            </a>
+            <a href="../index.html#casos">
+                Casos de uso
+            </a>
+        </div>
+        <div id="ayuda">
+            <h3>
+                Ayuda
+            </h3>
+            <a href="faq.html">
+                Preguntas frecuentes
+            </a>
+            <a href="https://www.corporaciondfl.com/es/sugerencias_quejas.html#sugerencias" id="ejercicioderechos" target="_blank">
+                Ejercicio de Derechos
+            </a>
+            <a href="https://wa.me/593997367365?text=Hola%2C%20necesito%20chat%20con%20un%20asesor%20de%20SIGNED365,%20escribo%20desde%20la%20web." target="_blank">
+                Chat con asesor
+            </a>
+            <a href="https://form.jotform.com/signed365/soporte" rel="noopener" target="_blank">
+                Crear ticket
+            </a>
+            <!-- Modal Legal   -->
+            <button aria-controls="legal-modal" aria-haspopup="dialog" class="footer-legal-trigger" id="legal-open" type="button">
+                <span aria-hidden="true">
+                    ⚖
+                </span>
+                    Legal
+            </button>
+        </div>
+        <div>
+            <h3>
+                Contacto
+            </h3>
+            <p>
+                Ventas: +593997367365<br/>
+                Soporte: +593989107058<br/>
+                ventas@corporaciondfl.com<br/>
+            </p>
+            <a href="https://www.corporaciondfl.com/" rel="noopener" target="_blank">
+                Visitar Corporación DFL →
+            </a>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <span>
+            ©
+            <span id="year">
+                2026
+            </span>
+            SIGNED365. Todos los derechos reservados.
+        </span>
+        <span>
+            Desarrollado por DAV2
+        </span>
+    </div>
 </footer>
-<!-- ACCESOS SIN BACKEND: NO SIMULAR AUTENTICACIÓN -->
-<div class="anchor-target" id="demo">
-</div>
-<div class="anchor-target" id="acceso">
-</div>
-<div class="anchor-target" id="administracion">
-</div>
-<!-- 11. BOTONES FLOTANTES -->
+
+<!-- BOTONES FLOTANTES -->
+<div class="anchor-target" id="demo"></div>
+<div class="anchor-target" id="acceso"></div>
+<div class="anchor-target" id="administracion"></div>
 <div class="floating">
-<button aria-controls="announcement-panel" aria-expanded="false" aria-label="Abrir anuncio importante" class="announcement-bell" id="announcement-bell" title="Abrir anuncio importante" type="button">
-<svg aria-hidden="true" fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="23" xmlns="http://www.w3.org/2000/svg">
-<path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9">
-</path>
-<path d="M10 21h4">
-</path>
-</svg>
-</button>
-<button aria-label="Opciones de accesibilidad" id="accessibility" title="Aumentar tamaño de letra">
-    Aa
-   </button>
-<a class="back-to-top" href="#">
-<button aria-label="Subir al inicio" style="background-color:rgb(3, 197, 231)" title="Ir al Inicio">
-     ↑
+    <button aria-controls="announcement-panel" aria-expanded="false" aria-label="Abrir anuncio importante" class="announcement-bell" id="announcement-bell" title="Abrir anuncio importante" type="button">
+        <svg aria-hidden="true" fill="none" height="23" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="23" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
+            <path d="M10 21h4"></path>
+        </svg>
     </button>
-</a>
+    <button aria-label="Opciones de accesibilidad" id="accessibility" title="Aumentar tamaño de letra">
+        Aa
+    </button>
+    <a href="#">
+        <button aria-label="Subir al inicio" style="background-color:rgb(3, 197, 231)" title="Ir al Inicio">
+            ↑
+        </button>
+    </a>
 </div>
-<div aria-live="polite" class="toast" id="toast" role="status">
-</div>
-<!-- 12. ANUNCIO COMPARTIDO -->
-<div id="announcement-mount">
-</div>
-<!-- 13. INFORMACIÓN LEGAL -->
+<div aria-live="polite" class="toast" id="toast" role="status"></div>
+
+<!-- ANUNCIO COMPARTIDO: actualizable desde js/announcement-shared.js -->
+<div id="announcement-mount"></div>
 <dialog aria-labelledby="legal-title" class="legal-modal" id="legal-modal">
-<div class="legal-header">
-<div>
-<h2 id="legal-title">
-      Información legal
-     </h2>
-<p>
-      Documentos de referencia · Contenido pendiente de aprobación
-     </p>
-</div>
-<button aria-label="Cerrar información legal" id="legal-close" type="button">
-     ×
-    </button>
-</div>
-<div aria-label="Categorías legales" class="legal-tabs" role="tablist">
-<button aria-selected="true" class="is-active" data-legal="cookies" role="tab" type="button">
-     Uso de Cookies
-    </button>
-<button aria-selected="false" data-legal="datos" role="tab" type="button">
-     Protección de Datos
-    </button>
-<button aria-selected="false" data-legal="terminos" role="tab" type="button">
-     Términos &amp; Condiciones
-    </button>
-<button aria-selected="false" data-legal="promos" role="tab" type="button">
-     Promociones &amp; Beneficios
-    </button>
-<button aria-selected="false" data-legal="tratamiento" role="tab" type="button">
-     Tratamiento de Datos Personales
-    </button>
-</div>
-<div class="legal-body" id="legal-body" role="tabpanel" tabindex="0">
-<h3>
-     Uso de Cookies
-    </h3>
-<p>
-     Texto de ejemplo: este espacio permitirá explicar qué cookies utiliza el sitio, sus finalidades y las opciones de configuración disponibles. El contenido definitivo deberá aprobarse antes de su publicación.
-    </p>
-</div>
-<div class="legal-footer">
-<small>
-     .:: Última actualización 20 de febrero de 2025 ::.
-    </small>
-<button class="btn btn-primary" id="legal-dismiss" type="button">
-     Cerrar
-    </button>
-</div>
+    <div class="legal-header">
+        <div>
+            <h2 id="legal-title">
+                Información legal
+            </h2>
+            <p>
+                Documentos de referencia · Contenido pendiente de aprobación
+            </p>
+        </div>
+        <button aria-label="Cerrar información legal" id="legal-close" type="button">
+            ×
+        </button>
+    </div>
+    <div aria-label="Categorías legales" class="legal-tabs" role="tablist">
+        <button aria-selected="true" class="is-active" data-legal="cookies" role="tab" type="button">
+            Uso de Cookies
+        </button>
+        <button aria-selected="false" data-legal="datos" role="tab" type="button">
+            Protección de Datos
+        </button>
+        <button aria-selected="false" data-legal="terminos" role="tab" type="button">
+            Términos &amp; Condiciones
+        </button>
+        <button aria-selected="false" data-legal="promos" role="tab" type="button">
+            Promociones &amp; Beneficios
+        </button>
+        <button aria-selected="false" data-legal="tratamiento" role="tab" type="button">
+            Tratamiento de Datos Personales
+        </button>
+    </div>
+    <div class="legal-body" id="legal-body" role="tabpanel" tabindex="0">
+        <h3>
+            Uso de Cookies
+        </h3>
+        <!-- Texto de apertura de Términos  -->
+        <p>
+            En el sitio web de SIGNED365 es una marca registrada de Corporación DFL Cía. Ltda. y utiliza cookies propias y de terceros para garantizar el correcto funcionamiento de la página, mejorar tu experiencia de navegación y analizar el uso de nuestros servicios.<br>
+            Al seleccionar «Aceptar», autorizas el uso de cookies conforme a las finalidades descritas en nuestra Política de Cookies.<br>
+            Puedes conocer más sobre el tratamiento de tus datos y el uso de estas tecnologías en nuestra Política de Cookies y Política de Privacidad. <a style="color: aqua;" href="https://www.corporaciondfl.com/es/politicas.html#politicas" target="_blank">Ver Políticas extendidas.</a> <br>
+        </p>
+    </div>
+    <div class="legal-footer">
+        <small>
+            .:: Última actualización 20 de febrero de 2025 ::.
+        </small>
+        <button class="btn btn-primary" id="legal-dismiss" type="button">
+            Cerrar
+        </button>
+    </div>
 </dialog>
+
 <!-- INICIO Bloqueo botón derecho  -->
 <script type="text/javascript">
    document.oncontextmenu = function(){return false}
-  </script>
+</script>
 <!-- FIN Bloqueo botón derecho -->
 <script defer="True" src="../js/v7-shared.js"></script>
 <script defer="True" src="../js/v7-links.js"></script>
@@ -602,5 +599,8 @@
 <!-- Cookies: configuración y gestor compartidos -->
 <script defer src="../js/cookies-config.js"></script>
 <script defer src="../js/cookies.js"></script>
+
+<!-- Efecto parallax para el footer -->
+<script defer src="../js/footer-parallax.js"></script>
 </body>
 </html>
