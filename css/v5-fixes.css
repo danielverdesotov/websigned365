@@ -1,19 +1,250 @@
-/* SIGNED365 · V5 | Reproductor y correcciones de contraste */
-/* 01. Video activado exclusivamente mediante interacción del usuario */
-.video-player { position: relative; overflow: hidden; isolation: isolate; }
-.video-play-button { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; width: 100%; height: 100%; padding: 20px; border: 0; background: transparent; color: #fff; cursor: pointer; text-align: center; }
-.video-play-button:hover .play, .video-play-button:focus-visible .play { transform: scale(1.07); }
-.video-play-button .play { transition: transform .2s ease; }
-.video-play-button small { color: #fff; opacity: .85; }
-.video-media { position: absolute; inset: 0; background: #000; }
-.video-media[hidden] { display: none !important; }
-.video-media video, .video-media iframe { display: block; width: 100%; height: 100%; border: 0; object-fit: contain; }
-/* 02. Botón de soporte: blanco visible sobre fondo azul en ambos temas */
-.cta .actions .btn-white { background: #fff !important; border: 2px solid #fff !important; color: #004470 !important; }
-.cta .actions .btn-white:hover, .cta .actions .btn-white:focus-visible { background: transparent !important; border-color: #fff !important; color: #fff !important; }
-:root.dark .cta .actions .btn-white { background: #fff !important; border-color: #fff !important; color: #004470 !important; }
-:root.dark .cta .actions .btn-white:hover, :root.dark .cta .actions .btn-white:focus-visible { background: transparent !important; border-color: #fff !important; color: #fff !important; }
-/* 03. Nombres de autores: celeste con contraste en ambos temas */
-.review-person strong { color: #0074b9 !important; }
-:root.dark .review-person strong { color: #7ed5ff !important; }
-@media (prefers-reduced-motion: reduce) { .video-play-button .play { transition: none; } }
+/* ============================================================
+   SIGNED365 | V5
+   Reproductor de video y correcciones de contraste
+   Compatible con temas claro y oscuro
+   ============================================================ */
+
+
+/* ============================================================
+   01. REPRODUCTOR DE VIDEO
+   Video activado exclusivamente mediante interacción del usuario
+   ============================================================ */
+
+
+/* 01.1. Contenedor principal del reproductor */
+
+.video-player {
+
+    /* Posicionamiento */
+    position: relative;
+
+    /* Control del contenido */
+    overflow: hidden;
+    isolation: isolate;
+
+}
+
+
+/* ============================================================
+   02. BOTÓN DE REPRODUCCIÓN DEL VIDEO
+   Apariencia, distribución e interacción
+   ============================================================ */
+
+
+/* 02.1. Contenedor del botón de reproducción */
+
+.video-play-button {
+
+    /* Distribución y alineación */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    /* Dimensiones */
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    /* Colores y apariencia */
+    border: 0;
+    background: transparent;
+    color: #fff;
+
+    /* Interacción */
+    cursor: pointer;
+    text-align: center;
+
+}
+
+
+/* 02.2. Efecto de ampliación del icono de reproducción
+   Se activa al pasar el cursor o mediante navegación por teclado.
+*/
+
+.video-play-button:hover .play,
+.video-play-button:focus-visible .play {
+    transform: scale(1.07);
+}
+
+
+/* 02.3. Transición del icono de reproducción */
+
+.video-play-button .play {
+    transition: transform .2s ease;
+}
+
+
+/* 02.4. Texto informativo debajo del botón */
+
+.video-play-button small {
+    color: #fff;
+    opacity: .85;
+}
+
+
+/* ============================================================
+   03. CONTENEDOR DEL CONTENIDO MULTIMEDIA
+   Compatible con videos locales y reproductores mediante iframe
+   ============================================================ */
+
+
+/* 03.1. Contenedor principal del video */
+
+.video-media {
+
+    /* Ubicación */
+    position: absolute;
+    inset: 0;
+
+    /* Apariencia */
+    background: #000;
+
+}
+
+
+/* 03.2. Control de visibilidad del reproductor
+   Oculta el contenido multimedia cuando tiene el atributo hidden.
+*/
+
+.video-media[hidden] {
+    display: none !important;
+}
+
+
+/* 03.3. Dimensiones y ajuste del contenido multimedia */
+
+.video-media video,
+.video-media iframe {
+
+    /* Distribución */
+    display: block;
+
+    /* Dimensiones */
+    width: 100%;
+    height: 100%;
+
+    /* Apariencia */
+    border: 0;
+
+    /* Ajuste del contenido */
+    object-fit: contain;
+
+}
+
+
+/* ============================================================
+   04. BOTÓN DE SOPORTE | ESTADO GENERAL
+   Botón blanco visible sobre el fondo azul de la sección CTA
+   ============================================================ */
+
+
+/* 04.1. Apariencia predeterminada del botón */
+
+.cta .actions .btn-white {
+
+    /* Fondo y borde */
+    background: #fff !important;
+    border: 2px solid #fff !important;
+
+    /* Color del texto */
+    color: #004470 !important;
+
+}
+
+
+/* 04.2. Estado hover y enfoque mediante teclado */
+
+.cta .actions .btn-white:hover,
+.cta .actions .btn-white:focus-visible {
+
+    /* Fondo transparente */
+    background: transparent !important;
+
+    /* Color del borde */
+    border-color: #fff !important;
+
+    /* Color del texto */
+    color: #fff !important;
+
+}
+
+
+/* ============================================================
+   05. BOTÓN DE SOPORTE | TEMA OSCURO
+   Conserva el contraste del botón en el tema oscuro
+   ============================================================ */
+
+
+/* 05.1. Apariencia predeterminada en tema oscuro */
+
+:root.dark .cta .actions .btn-white {
+
+    /* Fondo y borde */
+    background: #fff !important;
+    border-color: #fff !important;
+
+    /* Color del texto */
+    color: #004470 !important;
+
+}
+
+
+/* 05.2. Estado hover y enfoque en tema oscuro */
+
+:root.dark .cta .actions .btn-white:hover,
+:root.dark .cta .actions .btn-white:focus-visible {
+
+    /* Fondo transparente */
+    background: transparent !important;
+
+    /* Color del borde */
+    border-color: #fff !important;
+
+    /* Color del texto */
+    color: #fff !important;
+
+}
+
+
+/* ============================================================
+   06. NOMBRES DE AUTORES Y TESTIMONIOS
+   Corrección de contraste según el tema seleccionado
+   ============================================================ */
+
+
+/* 06.1. Color del nombre en tema claro */
+
+.review-person strong {
+    color: #0074b9 !important;
+}
+
+
+/* 06.2. Color del nombre en tema oscuro */
+
+:root.dark .review-person strong {
+    color: #7ed5ff !important;
+}
+
+
+/* ============================================================
+   07. ACCESIBILIDAD | REDUCCIÓN DE ANIMACIONES
+   Desactiva la transición del icono de reproducción cuando
+   el usuario ha configurado su dispositivo para reducir
+   el movimiento.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .video-play-button .play {
+        transition: none;
+    }
+
+}
+
+
+/* ============================================================
+   FIN DEL ARCHIVO | REPRODUCTOR Y CONTRASTE
+   SIGNED365 V5
+   ============================================================ */

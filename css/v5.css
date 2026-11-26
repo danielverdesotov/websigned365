@@ -1,20 +1,327 @@
-/* SIGNED365 · EVOLUTION V5 | Navegación de segundo nivel */
-.nav-dropdown { position: relative; display: flex; align-items: center; gap: 3px; }
-.nav-dropdown-link { white-space: nowrap; }
-.nav-dropdown-toggle { display: inline-flex; align-items: center; justify-content: center; width: 25px; height: 30px; border: 0; background: transparent; color: var(--ink); font-size: 1.2rem; border-radius: 6px; }
-.nav-dropdown-toggle:hover, .nav-dropdown-toggle:focus-visible { color: var(--blue); background: var(--soft); }
-.nav-submenu { position: absolute; top: calc(100% + 12px); left: 0; min-width: 210px; display: none; flex-direction: column; padding: 8px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); box-shadow: var(--shadow); z-index: 40; }
-.nav-submenu::before { content: ''; position: absolute; height: 14px; top: -14px; left: 0; right: 0; }
-.nav-submenu a { display: block; padding: 10px 13px; border-radius: 7px; font-family: var(--font-body); font-size: .84rem; font-weight: 600; color: var(--ink); }
-.nav-submenu a:hover, .nav-submenu a:focus-visible { background: var(--soft); color: var(--blue); }
-.nav-dropdown:hover .nav-submenu, .nav-dropdown:focus-within .nav-submenu, .nav-dropdown.is-expanded .nav-submenu { display: flex; }
-.nav-dropdown-toggle:focus-visible, .nav-submenu a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-@media (max-width: 900px) {
-    .nav-dropdown { display: flex; flex-wrap: wrap; justify-content: space-between; width: 100%; }
-    .nav-dropdown-toggle { width: 40px; height: 40px; }
-    .nav-submenu { position: static; display: none; flex-basis: 100%; width: 100%; min-width: 0; margin-top: 4px; box-shadow: none; background: var(--soft); }
-    .nav-dropdown:hover .nav-submenu, .nav-dropdown:focus-within .nav-submenu { display: none; }
-    .nav-dropdown.is-expanded .nav-submenu { display: flex; }
-    .nav-submenu::before { display: none; }
+/* ============================================================
+   SIGNED365 | EVOLUTION V5
+   Navegación de segundo nivel
+   Menús desplegables y adaptación responsive
+   Compatible con temas claro y oscuro
+   ============================================================ */
+
+
+/* ============================================================
+   01. CONTENEDOR PRINCIPAL DEL MENÚ DESPLEGABLE
+   Distribución del enlace principal y botón de expansión
+   ============================================================ */
+
+
+/* 01.1. Contenedor del menú desplegable */
+
+.nav-dropdown {
+
+    /* Posicionamiento */
+    position: relative;
+
+    /* Distribución y alineación */
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
 }
-@media (prefers-reduced-motion: reduce) { .nav-dropdown-toggle { transition: none; } }
+
+
+/* 01.2. Enlace principal del menú
+   Evita que el texto se divida en varias líneas.
+*/
+
+.nav-dropdown-link {
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   02. BOTÓN DE EXPANSIÓN DEL SUBMENÚ
+   Control visual para desplegar las opciones de segundo nivel
+   ============================================================ */
+
+
+/* 02.1. Apariencia general del botón */
+
+.nav-dropdown-toggle {
+
+    /* Distribución y alineación */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Dimensiones */
+    width: 25px;
+    height: 30px;
+
+    /* Colores y apariencia */
+    border: 0;
+    background: transparent;
+    color: var(--ink);
+
+    /* Tamaño del icono */
+    font-size: 1.2rem;
+
+    /* Bordes redondeados */
+    border-radius: 6px;
+
+}
+
+
+/* 02.2. Estado hover y enfoque mediante teclado */
+
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle:focus-visible {
+    color: var(--blue);
+    background: var(--soft);
+}
+
+
+/* ============================================================
+   03. CONTENEDOR DEL SUBMENÚ DESPLEGABLE
+   Ubicación, dimensiones y apariencia de las opciones
+   ============================================================ */
+
+
+/* 03.1. Configuración general del submenú */
+
+.nav-submenu {
+
+    /* Posicionamiento */
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+
+    /* Dimensiones */
+    min-width: 210px;
+
+    /* Estado inicial y distribución */
+    display: none;
+    flex-direction: column;
+
+    /* Espaciado interno */
+    padding: 8px;
+
+    /* Bordes y apariencia */
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--card);
+
+    /* Sombra exterior */
+    box-shadow: var(--shadow);
+
+    /* Prioridad visual */
+    z-index: 40;
+
+}
+
+
+/* 03.2. Puente invisible entre el menú y el submenú
+   Permite desplazar el cursor hacia las opciones sin que
+   el submenú se cierre al atravesar el espacio intermedio.
+*/
+
+.nav-submenu::before {
+
+    content: '';
+
+    /* Posicionamiento */
+    position: absolute;
+    height: 14px;
+    top: -14px;
+    left: 0;
+    right: 0;
+
+}
+
+
+/* ============================================================
+   04. ENLACES DEL SUBMENÚ
+   Apariencia de las opciones de navegación de segundo nivel
+   ============================================================ */
+
+
+/* 04.1. Estilo general de los enlaces */
+
+.nav-submenu a {
+
+    /* Distribución */
+    display: block;
+
+    /* Espaciado interno */
+    padding: 10px 13px;
+
+    /* Bordes redondeados */
+    border-radius: 7px;
+
+    /* Tipografía */
+    font-family: var(--font-body);
+    font-size: .84rem;
+    font-weight: 600;
+
+    /* Color del texto */
+    color: var(--ink);
+
+}
+
+
+/* 04.2. Estado hover y enfoque de los enlaces */
+
+.nav-submenu a:hover,
+.nav-submenu a:focus-visible {
+    background: var(--soft);
+    color: var(--blue);
+}
+
+
+/* ============================================================
+   05. APERTURA Y VISIBILIDAD DEL SUBMENÚ
+   Control de los diferentes estados de interacción
+   ============================================================ */
+
+
+/* 05.1. Mostrar el submenú en los siguientes estados:
+
+   - Al pasar el cursor sobre el menú principal.
+   - Al navegar mediante el teclado.
+   - Cuando el contenedor tiene la clase is-expanded.
+*/
+
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu,
+.nav-dropdown.is-expanded .nav-submenu {
+    display: flex;
+}
+
+
+/* ============================================================
+   06. ACCESIBILIDAD | NAVEGACIÓN POR TECLADO
+   Indicador visual del elemento seleccionado
+   ============================================================ */
+
+.nav-dropdown-toggle:focus-visible,
+.nav-submenu a:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+}
+
+
+/* ============================================================
+   07. DISEÑO RESPONSIVE | TABLETS Y DISPOSITIVOS MÓVILES
+   Pantallas de hasta 900px
+
+   El submenú deja de utilizar posicionamiento absoluto
+   y pasa a formar parte del flujo del menú principal.
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+
+    /* --------------------------------------------------------
+       07.1. Contenedor principal del menú desplegable
+       -------------------------------------------------------- */
+
+    .nav-dropdown {
+
+        /* Distribución */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        /* Dimensiones */
+        width: 100%;
+
+    }
+
+
+    /* --------------------------------------------------------
+       07.2. Botón de expansión en dispositivos móviles
+       Mayor superficie para facilitar la interacción táctil.
+       -------------------------------------------------------- */
+
+    .nav-dropdown-toggle {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* --------------------------------------------------------
+       07.3. Contenedor del submenú móvil
+       -------------------------------------------------------- */
+
+    .nav-submenu {
+
+        /* Posicionamiento dentro del flujo del menú */
+        position: static;
+
+        /* Estado inicial */
+        display: none;
+
+        /* Distribución y dimensiones */
+        flex-basis: 100%;
+        width: 100%;
+        min-width: 0;
+
+        /* Separación del menú principal */
+        margin-top: 4px;
+
+        /* Apariencia */
+        box-shadow: none;
+        background: var(--soft);
+
+    }
+
+
+    /* --------------------------------------------------------
+       07.4. Desactivar la apertura automática mediante hover
+       o focus-within en dispositivos móviles.
+       -------------------------------------------------------- */
+
+    .nav-dropdown:hover .nav-submenu,
+    .nav-dropdown:focus-within .nav-submenu {
+        display: none;
+    }
+
+
+    /* --------------------------------------------------------
+       07.5. Apertura del submenú mediante la clase is-expanded
+       -------------------------------------------------------- */
+
+    .nav-dropdown.is-expanded .nav-submenu {
+        display: flex;
+    }
+
+
+    /* --------------------------------------------------------
+       07.6. Desactivar el puente invisible del submenú
+       No es necesario cuando el menú utiliza posición estática.
+       -------------------------------------------------------- */
+
+    .nav-submenu::before {
+        display: none;
+    }
+
+}
+
+
+/* ============================================================
+   08. ACCESIBILIDAD | REDUCCIÓN DE ANIMACIONES
+   Desactiva las transiciones del botón de expansión cuando
+   el usuario ha configurado su dispositivo para reducir
+   el movimiento.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nav-dropdown-toggle {
+        transition: none;
+    }
+
+}
+
+
+/* ============================================================
+   FIN DEL ARCHIVO | NAVEGACIÓN DE SEGUNDO NIVEL
+   SIGNED365 EVOLUTION V5
+   ============================================================ */

@@ -1,22 +1,328 @@
-/* SIGNED365 V6 · Estilos exclusivos de páginas internas */
-.internal-hero { background: radial-gradient(circle at 85% 10%, rgba(0,116,185,.10), transparent 44%), var(--soft); }
-.internal-hero-grid { display:grid; grid-template-columns: 1fr 1.08fr; align-items:center; gap: 48px; }
-.internal-hero h1 em { color:var(--blue); font-style:normal; }
-.internal-hero p { max-width:560px; font-size:1.08rem; }
-.internal-hero-visual img, .feature-row img { display:block; width:100%; height:auto; border-radius:18px; border:1px solid var(--line); box-shadow:var(--shadow); }
-.steps-four { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:25px; }
-.steps-four article { padding:12px 0; }
-.steps-four span { display:grid; place-items:center; background:var(--blue); color:#fff; width:46px; height:46px; border-radius:50%; font-weight:800; margin-bottom:20px; }
-.steps-four h3 { margin-bottom:10px; }
-.steps-four p { font-size:.92rem; }
-.feature-row { display:grid; grid-template-columns: 1fr 1fr; align-items:center; gap:50px; margin:40px 0 70px; }
-.feature-row.reverse img { order:2; }
-.feature-row h3 { font-size:clamp(1.5rem,2.8vw,2.2rem); margin:12px 0 20px; }
-.feature-row:last-child { margin-bottom:0; }
-.solution-cards { grid-template-columns:repeat(2,minmax(0,1fr)); max-width:800px; margin:auto; }
-.solution-cards .card a, .inline-link { color:var(--blue); font-weight:700; }
-.solution-cards .card a:hover, .inline-link:hover { text-decoration:underline; }
-.back-to-top { display:grid; place-items:center; width:54px; height:54px; border-radius:50%; background:#03a9cb; color:#fff!important; font-size:1.5rem; box-shadow:0 8px 24px rgba(20,50,120,.25); }
-:root.dark .internal-hero-visual img, :root.dark .feature-row img { border-color:var(--line); }
-@media(max-width:900px) { .internal-hero-grid,.feature-row { grid-template-columns:1fr; gap:28px; } .steps-four { grid-template-columns:repeat(2,1fr); } .feature-row.reverse img { order:0; } }
-@media(max-width:600px) { .steps-four,.solution-cards { grid-template-columns:1fr; } .internal-hero h1 { font-size:clamp(2.3rem,10vw,3.5rem); } }
+/* ============================================================
+   SIGNED365 | V6
+   Estilos exclusivos de páginas internas
+   Compatible con temas claro y oscuro
+   ============================================================ */
+
+
+/* ============================================================
+   01. HERO DE PÁGINAS INTERNAS
+   Fondo, distribución y contenido principal
+   ============================================================ */
+
+
+/* 01.1. Fondo del Hero */
+
+.internal-hero {
+    background:
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(0, 116, 185, .10),
+            transparent 44%
+        ),
+        var(--soft);
+}
+
+
+/* 01.2. Distribución de columnas */
+
+.internal-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.08fr;
+    align-items: center;
+    gap: 48px;
+}
+
+
+/* 01.3. Texto destacado del título principal */
+
+.internal-hero h1 em {
+    color: var(--blue);
+    font-style: normal;
+}
+
+
+/* 01.4. Texto descriptivo del Hero */
+
+.internal-hero p {
+    max-width: 560px;
+    font-size: 1.08rem;
+}
+
+
+/* ============================================================
+   02. IMÁGENES DE PÁGINAS INTERNAS
+   Imágenes del Hero y secciones de funcionalidades
+   ============================================================ */
+
+.internal-hero-visual img,
+.feature-row img {
+
+    /* Distribución y dimensiones */
+    display: block;
+    width: 100%;
+    height: auto;
+
+    /* Bordes y apariencia */
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+
+}
+
+
+/* ============================================================
+   03. SECCIÓN DE CUATRO PASOS
+   Distribución de procesos o instrucciones
+   ============================================================ */
+
+
+/* 03.1. Contenedor principal de los pasos */
+
+.steps-four {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+
+/* 03.2. Contenedor individual de cada paso */
+
+.steps-four article {
+    padding: 12px 0;
+}
+
+
+/* 03.3. Indicador circular numerado */
+
+.steps-four span {
+
+    /* Distribución y alineación */
+    display: grid;
+    place-items: center;
+
+    /* Colores */
+    background: var(--blue);
+    color: #fff;
+
+    /* Dimensiones y forma */
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+
+    /* Tipografía */
+    font-weight: 800;
+
+    /* Espaciado */
+    margin-bottom: 20px;
+
+}
+
+
+/* 03.4. Título de cada paso */
+
+.steps-four h3 {
+    margin-bottom: 10px;
+}
+
+
+/* 03.5. Descripción de cada paso */
+
+.steps-four p {
+    font-size: .92rem;
+}
+
+
+/* ============================================================
+   04. SECCIONES DE FUNCIONALIDADES
+   Distribución alternada de imágenes y textos
+   ============================================================ */
+
+
+/* 04.1. Contenedor principal de cada funcionalidad */
+
+.feature-row {
+
+    /* Distribución de columnas */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    /* Separación entre imagen y texto */
+    gap: 50px;
+
+    /* Márgenes superior e inferior */
+    margin: 40px 0 70px;
+
+}
+
+
+/* 04.2. Distribución invertida de la imagen
+   Permite alternar la ubicación de imágenes y textos.
+*/
+
+.feature-row.reverse img {
+    order: 2;
+}
+
+
+/* 04.3. Título de cada funcionalidad */
+
+.feature-row h3 {
+    font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+    margin: 12px 0 20px;
+}
+
+
+/* 04.4. Eliminar margen inferior de la última funcionalidad */
+
+.feature-row:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ============================================================
+   05. TARJETAS DE SOLUCIONES
+   Distribución y dimensiones del conjunto de tarjetas
+   ============================================================ */
+
+.solution-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 800px;
+    margin: auto;
+}
+
+
+/* ============================================================
+   06. ENLACES INTERNOS Y COMERCIALES
+   Enlaces de tarjetas y enlaces dentro del contenido
+   ============================================================ */
+
+
+/* 06.1. Apariencia general de los enlaces */
+
+.solution-cards .card a,
+.inline-link {
+    color: var(--blue);
+    font-weight: 700;
+}
+
+
+/* 06.2. Efecto al pasar el cursor */
+
+.solution-cards .card a:hover,
+.inline-link:hover {
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   07. BOTÓN FLOTANTE | VOLVER AL INICIO
+   Permite regresar a la parte superior de la página
+   ============================================================ */
+
+.back-to-top {
+
+    /* Distribución y alineación */
+    display: grid;
+    place-items: center;
+
+    /* Dimensiones y forma */
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+
+    /* Colores */
+    background: #03a9cb;
+    color: #fff !important;
+
+    /* Tamaño del icono */
+    font-size: 1.5rem;
+
+    /* Sombra */
+    box-shadow: 0 8px 24px rgba(20, 50, 120, .25);
+
+}
+
+
+/* ============================================================
+   08. ADAPTACIÓN AL TEMA OSCURO
+   Apariencia de las imágenes en páginas internas
+   ============================================================ */
+
+:root.dark .internal-hero-visual img,
+:root.dark .feature-row img {
+    border-color: var(--line);
+}
+
+
+/* ============================================================
+   09. DISEÑO RESPONSIVE | TABLETS Y PANTALLAS MEDIANAS
+   Pantallas de hasta 900px
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+
+    /* 09.1. Hero y secciones de funcionalidades
+       Cambiar de dos columnas a una columna.
+    */
+
+    .internal-hero-grid,
+    .feature-row {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+
+    /* 09.2. Sección de cuatro pasos
+       Distribuir los pasos en dos columnas.
+    */
+
+    .steps-four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* 09.3. Restablecer el orden de las imágenes
+       Evita mantener la distribución invertida en móviles.
+    */
+
+    .feature-row.reverse img {
+        order: 0;
+    }
+
+}
+
+
+/* ============================================================
+   10. DISEÑO RESPONSIVE | DISPOSITIVOS MÓVILES
+   Pantallas de hasta 600px
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+
+    /* 10.1. Pasos y tarjetas de soluciones
+       Distribuir todos los elementos en una sola columna.
+    */
+
+    .steps-four,
+    .solution-cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* 10.2. Tamaño adaptable del título principal */
+
+    .internal-hero h1 {
+        font-size: clamp(2.3rem, 10vw, 3.5rem);
+    }
+
+}
+
+
+/* ============================================================
+   FIN DEL ARCHIVO | ESTILOS DE PÁGINAS INTERNAS
+   SIGNED365 V6
+   ============================================================ */

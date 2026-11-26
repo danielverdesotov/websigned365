@@ -55,47 +55,79 @@
     Ir al contenido
 </a>
 
-<!-- 01. CABECERA -->
+<!-- 01. CABECERA Y NAVEGACIÓN -->
 <header class="header" id="inicio">
-    <div class="container nav">
-        <a aria-label="SIGNED365, inicio" class="logo" href="#">
-        <picture class="brand-picture">
-        <img alt="SIGNED365 · Más que una firma" class="brand-logo logo-light" src="assets/logo-color.png"/>
-        <img alt="" aria-hidden="true" class="brand-logo logo-dark" src="assets/logo-blanco.png"/>
-        </picture>
-        </a>
-        <button aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú" class="menu-toggle">
-            ☰
-        </button>
-        <nav aria-label="Navegación principal" id="main-nav">
-            <a href="#soluciones">
-                Soluciones
-            </a>
-            <a href="#planes">
-                Planes
-            </a>
-            <a href="#firma">
-                Firma Electrónica
-            </a>
-            <a href="pginter/faq.html">
-                Ayuda
-            </a>
-            <a href="#recursos">
-                Recursos
-            </a>
-        </nav>
-        <div class="nav-actions">
-            <a href="#contacto">
-                Contacto
-            </a>
-            <a class="btn btn-primary btn-sm" href="https://appsigned365.corporaciondfl.com/login" target="_blank">
-                Ir a SIGNED365
-            </a>
-            <button aria-label="Cambiar tema" class="icon-btn" id="theme">
-                ◐
-            </button>
-        </div>
-    </div>
+       <div class="container nav">
+              <a aria-label="SIGNED365, inicio" class="logo" href="#">
+                     <picture class="brand-picture">
+                            <img alt="SIGNED365 · Más que una firma" class="brand-logo logo-light" src="assets/logo-color.png"/>
+                            <img alt="" aria-hidden="true" class="brand-logo logo-dark" src="assets/logo-blanco.png"/>
+                     </picture>
+              </a>
+              <button aria-controls="main-nav" aria-expanded="false" aria-label="Abrir menú" class="menu-toggle">
+                     ☰
+              </button>
+              <nav aria-label="Navegación principal" id="main-nav">
+                     <a href="index.html">
+                            Inicio
+                     </a>
+                     <div class="nav-dropdown">
+                            <a aria-haspopup="true" class="nav-dropdown-link">
+                                   Soluciones
+                            </a>
+                            <button aria-controls="firma-submenu" aria-expanded="false" aria-label="Soluciones SIGNED365" class="nav-dropdown-toggle" type="button">
+                                   &gt;
+                            </button>
+                            <div class="nav-submenu" id="firma-submenu">
+                                   <a href="pginter/factuelectro.html">
+                                          Facturar Electrónicamente
+                                   </a>
+                                   <a href="pginter/firmadoc.html">
+                                          Firmar de Documentos
+                                   </a>
+                                   <a href="pginter/firmadoc.html">
+                                          Multifirma
+                                   </a>
+                            </div>
+                     </div>
+                     <a href="index.html#planes">
+                            Planes
+                     </a>
+                     <a href="index.html#firma">
+                            Firma Electrónica
+                     </a>
+                     <a href="pginter/faq.html">
+                            Ayuda
+                     </a>
+                     <div class="nav-dropdown">
+                            <a aria-haspopup="true" class="nav-dropdown-link">
+                                   Recursos
+                            </a>
+                            <button aria-controls="firma-submenu" aria-expanded="false" aria-label="Soluciones SIGNED365" class="nav-dropdown-toggle" type="button">
+                                   &gt;
+                            </button>
+                            <div class="nav-submenu" id="firma-submenu">
+                                   <a href="pginter/blog365.html">
+                                          Blog
+                                   </a>
+                                   <a href="pginter/recursos.html">
+                                          Guías
+                                   </a>
+                            </div>
+                     </div>
+              </nav>
+              <div class="nav-actions">
+                     <a href="#contacto">
+                            Contacto
+                     </a>
+                     <a class="btn btn-primary btn-sm" href="https://appsigned365.corporaciondfl.com/login" target="_blank">
+                            Ir a SIGNED365
+                     </a>
+                     <button aria-label="Cambiar tema" class="icon-btn" id="theme">
+                            ◐
+                     </button>
+              </div>
+       </div>
 </header>
 
 <main id="contenido">
@@ -873,8 +905,9 @@
 </div>
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
 
-<!-- ANUNCIO COMPARTIDO: actualizable desde js/announcement-shared.js -->
+<!-- ANUNCIO COMPARTIDO: actualizable desde js/announcement-shared.js y v8.css (PopUp ANUNCIO) -->
 <div id="announcement-mount"></div>
+
 <dialog aria-labelledby="legal-title" class="legal-modal" id="legal-modal">
     <div class="legal-header">
         <div>
@@ -931,13 +964,15 @@
 <script type="text/javascript">
     document.oncontextmenu = function(){return false}
 </script>
-<!-- FIN Bloqueo botón derecho -->
+<!--  FIN Bloqueo botón derecho -->
 
 <script defer="" src="js/v4.js"></script>
 <script defer="" src="js/v5-video.js"></script>
 <script defer="True" src="js/v7-shared.js"></script>
 <script defer="True" src="js/v7-links.js"></script>
 <script defer="True" src="js/v7-devices.js"></script>    
+<!-- V8-3 | Configuración central del anuncio multimedia -->
+<script defer src="js/announcement-config.js"></script>
 <script defer src="js/announcement-shared.js"></script>
 <script defer src="js/announcement.js"></script>
 

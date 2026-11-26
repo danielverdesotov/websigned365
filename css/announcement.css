@@ -1,26 +1,480 @@
-/* SIGNED365 | Anuncio desplegable: componente independiente */
-.announcement { position: fixed; inset: 0 0 auto; z-index: 1100; pointer-events: none; font-family: Roboto, Arial, sans-serif; }
-.announcement-shade { position: fixed; inset: 0; background: rgba(8, 25, 49, .23); opacity: 0; visibility: hidden; transition: opacity .45s ease, visibility .45s; pointer-events: none; }
-.announcement-panel { position: relative; width: min(70vw, 1020px); max-height: min(78vh, 760px); margin: 0 auto; overflow: auto; background: var(--surface, #fff); color: var(--text, #173047); border-radius: 0 0 22px 22px; box-shadow: 0 20px 65px rgba(0,20,50,.22); transform: translateY(-110%); opacity: 0; visibility: hidden; transition: transform .65s cubic-bezier(.2,.8,.2,1), opacity .4s ease, visibility .65s; pointer-events: none; }
-.announcement.is-open .announcement-panel { transform: translateY(0); opacity: 1; visibility: visible; pointer-events: auto; }
-.announcement.is-open .announcement-shade { opacity: 1; visibility: visible; }
-.announcement-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 26px 14px; }
-.announcement-heading h2 { font-size: clamp(20px, 2.3vw, 28px); margin: 4px 0 0; font-weight: 700; }
-.announcement-kicker { color: #0086be; font-size: 11px; letter-spacing: .11em; font-weight: 800; }
-.announcement-close { display: grid; place-items: center; flex: none; width: 40px; height: 40px; border: 1px solid #cad7df; border-radius: 50%; background: transparent; color: inherit; font-size: 29px; line-height: 1; cursor: pointer; }
-.announcement-close:hover, .announcement-close:focus-visible { background: #e6f5fd; color: #00547b; }
-.announcement-content { padding: 0 26px 22px; }
-.announcement-image { display: block; width: 100%; height: auto; max-height: 52vh; object-fit: contain; border-radius: 14px; }
-.announcement-note { margin: 12px 0 0; font-size: 13px; opacity: .75; }
-.announcement-tab { position: absolute; top: 0; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 9px; padding: 11px 24px; background: #00547b; color: #fff; border: 0; border-radius: 0 0 12px 12px; box-shadow: 0 6px 18px #001d3033; font-size: 12px; font-weight: 800; letter-spacing: .07em; cursor: pointer; pointer-events: auto; transition: background .2s; }
-.announcement-tab:hover, .announcement-tab:focus-visible { background: #0086be; }
-.announcement.is-open .announcement-tab { opacity: 0; visibility: hidden; pointer-events: none; }
-.announcement-close:focus-visible, .announcement-tab:focus-visible { outline: 3px solid #64c8ff; outline-offset: 3px; }
-@media (max-width: 767px) { .announcement-panel { width: calc(100vw - 24px); max-height: 82dvh; } .announcement-heading { padding: 16px 16px 12px; } .announcement-content { padding: 0 16px 18px; } .announcement-image { max-height: 54dvh; } .announcement-tab { padding: 10px 18px; } }
-@media (prefers-reduced-motion: reduce) { .announcement-panel, .announcement-shade { transition-duration: .01ms; } }
+/* ============================================================
+   SIGNED365 | ANNOUNCEMENT
+   Anuncio desplegable: componente independiente
+   ============================================================ */
 
-/* V3: campana de anuncios; ubicación independiente del menú superior. */
-.announcement-bell { display: grid; place-items: center; }
-.announcement .announcement-panel { z-index: 1; }
-body:has(.announcement.is-open) .floating .announcement-bell { opacity: 0; visibility: hidden; pointer-events: none; }
-body:not(:has(.announcement.is-open)) .floating .announcement-bell { opacity: 1; visibility: visible; }
+
+/* ============================================================
+   01. CONTENEDOR PRINCIPAL DEL ANUNCIO
+   ============================================================ */
+
+.announcement {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 1100;
+    pointer-events: none;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+
+/* ============================================================
+   02. CAPA OSCURA DETRÁS DEL ANUNCIO
+   ============================================================ */
+
+.announcement-shade {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 25, 49, .23);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity .45s ease,
+        visibility .45s;
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   03. PANEL PRINCIPAL DEL ANUNCIO
+   ============================================================ */
+
+.announcement-panel {
+    position: relative;
+
+    /* Dimensiones y ubicación */
+    width: min(70vw, 1020px);
+    max-height: min(78vh, 760px);
+    margin: 0 auto;
+    overflow: auto;
+
+    /* Colores y apariencia */
+    background: var(--surface, #fff);
+    color: var(--text, #173047);
+    border-radius: 0 0 22px 22px;
+    box-shadow: 0 20px 65px rgba(0, 20, 50, .22);
+
+    /* Estado inicial */
+    transform: translateY(-110%);
+    opacity: 0;
+    visibility: hidden;
+
+    /* Animación de apertura y cierre */
+    transition:
+        transform .65s cubic-bezier(.2, .8, .2, 1),
+        opacity .4s ease,
+        visibility .65s;
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   04. ESTADO ABIERTO DEL ANUNCIO
+   ============================================================ */
+
+.announcement.is-open .announcement-panel {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.announcement.is-open .announcement-shade {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ============================================================
+   05. CABECERA DEL ANUNCIO
+   ============================================================ */
+
+.announcement-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 26px 14px;
+}
+
+
+/* Título principal */
+
+.announcement-heading h2 {
+    font-size: clamp(20px, 2.3vw, 28px);
+    margin: 4px 0 0;
+    font-weight: 700;
+}
+
+
+/* Texto superior o etiqueta informativa */
+
+.announcement-kicker {
+    color: #0086be;
+    font-size: 11px;
+    letter-spacing: .11em;
+    font-weight: 800;
+}
+
+
+/* ============================================================
+   06. BOTÓN DE CIERRE (X)
+   ============================================================ */
+
+.announcement-close {
+    display: grid;
+    place-items: center;
+    flex: none;
+
+    /* Dimensiones */
+    width: 40px;
+    height: 40px;
+
+    /* Apariencia */
+    border: 1px solid #cad7df;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+
+    /* Tipografía */
+    font-size: 29px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* Estado hover y enfoque */
+
+.announcement-close:hover,
+.announcement-close:focus-visible {
+    background: #e6f5fd;
+    color: #00547b;
+}
+
+
+/* ============================================================
+   07. CONTENIDO DEL ANUNCIO
+   ============================================================ */
+
+.announcement-content {
+    padding: 0 26px 22px;
+}
+
+
+/* ============================================================
+   08. IMAGEN PRINCIPAL DEL ANUNCIO
+   ============================================================ */
+
+.announcement-image {
+    display: block;
+
+    /* Dimensiones de la imagen */
+    width: 100%;
+    height: auto;
+    max-height: 52vh;
+
+    /* Ajuste y apariencia */
+    object-fit: contain;
+    border-radius: 14px;
+}
+
+
+/* ============================================================
+   09. NOTA INFORMATIVA INFERIOR
+   ============================================================ */
+
+.announcement-note {
+    margin: 12px 0 0;
+    font-size: 13px;
+    opacity: .75;
+}
+
+
+/* ============================================================
+   10. PESTAÑA SUPERIOR DEL ANUNCIO
+   ============================================================ */
+
+.announcement-tab {
+
+    /* Ubicación */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    /* Distribución del contenido */
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 11px 24px;
+
+    /* Colores y apariencia */
+    background: #00547b;
+    color: #fff;
+    border: 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 6px 18px #001d3033;
+
+    /* Tipografía */
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .07em;
+
+    /* Interacción */
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background .2s;
+}
+
+
+/* Estado hover y enfoque de la pestaña */
+
+.announcement-tab:hover,
+.announcement-tab:focus-visible {
+    background: #0086be;
+}
+
+
+/* Ocultar pestaña cuando el anuncio está abierto */
+
+.announcement.is-open .announcement-tab {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   11. ACCESIBILIDAD Y NAVEGACIÓN POR TECLADO
+   ============================================================ */
+
+.announcement-close:focus-visible,
+.announcement-tab:focus-visible {
+    outline: 3px solid #64c8ff;
+    outline-offset: 3px;
+}
+
+
+/* ============================================================
+   12. DISEÑO RESPONSIVE | DISPOSITIVOS MÓVILES
+   Pantallas de hasta 767px
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+    /* Panel principal */
+
+    .announcement-panel {
+        width: calc(100vw - 24px);
+        max-height: 82dvh;
+    }
+
+
+    /* Cabecera */
+
+    .announcement-heading {
+        padding: 16px 16px 12px;
+    }
+
+
+    /* Contenido */
+
+    .announcement-content {
+        padding: 0 16px 18px;
+    }
+
+
+    /* Imagen principal */
+
+    .announcement-image {
+        max-height: 54dvh;
+    }
+
+
+    /* Pestaña superior */
+
+    .announcement-tab {
+        padding: 10px 18px;
+    }
+
+}
+
+
+/* ============================================================
+   13. ACCESIBILIDAD | REDUCCIÓN DE ANIMACIONES
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .announcement-panel,
+    .announcement-shade {
+        transition-duration: .01ms;
+    }
+
+}
+
+
+/* ============================================================
+   14. V3 | CAMPANA FLOTANTE DE ANUNCIOS
+   Ubicación independiente del menú superior
+   ============================================================ */
+
+.announcement-bell {
+    display: grid;
+    place-items: center;
+}
+
+
+/* Prioridad visual del panel */
+
+.announcement .announcement-panel {
+    z-index: 1;
+}
+
+
+/* Ocultar campana cuando el anuncio está abierto */
+
+body:has(.announcement.is-open) .floating .announcement-bell {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* Mostrar campana cuando el anuncio está cerrado */
+
+body:not(:has(.announcement.is-open)) .floating .announcement-bell {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ============================================================
+   FIN DEL ARCHIVO | ANNOUNCEMENT.CSS
+   SIGNED365
+   ============================================================ */
+
+/* ============================================================
+   15. V8-3 | CONTENIDO MULTIMEDIA DEL ANUNCIO
+   ============================================================ */
+.announcement-bell[hidden] {
+    display: none !important;
+}
+
+/* 15.1. Reproductor adaptable */
+.announcement .announcement-media {
+    width: min(100%, 110dvh);
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #000;
+}
+
+.announcement-media iframe,
+.announcement-media video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: contain;
+}
+
+/* 15.2. Controles y portada */
+.announcement-media-button {
+    padding: 10px 16px;
+    border: 1px solid #0074b9;
+    border-radius: 9px;
+    background: #004470;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+}
+
+/* 15.2.1. Portada independiente del botón */
+.announcement .announcement-cover {
+    display: grid;
+    gap: 12px;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+}
+
+/* 15.2.2. Botón de reproducción | Ambos temas */
+.announcement .announcement-play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 16px;
+    border: 1px solid #0074b9;
+    border-radius: 9px;
+    background: #0074b9;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.announcement .announcement-play:hover,
+.announcement .announcement-play:focus-visible {
+    background: #004470;
+    color: #fff;
+}
+
+.announcement-play-icon {
+    font-size: .9em;
+}
+
+/* 15.2.3. Nota inferior con hipervínculo opcional */
+.announcement .announcement-note a {
+    color: var(--blue, #0074b9);
+    text-decoration: underline;
+}
+
+:root.dark .announcement .announcement-note a {
+    color: #79d5ff;
+}
+
+.announcement .announcement-note[hidden] {
+    display: none;
+}
+
+.announcement-media-button:focus-visible {
+    outline: 3px solid #64c8ff;
+    outline-offset: 3px;
+}
+
+/* 15.3. Acciones y mensajes */
+.announcement-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.announcement-status {
+    margin: 10px 0;
+    text-align: center;
+    color: inherit;
+}
+
+.announcement-status:empty,
+.announcement-actions:empty {
+    display: none;
+}
+
+/* 16. V8-3 | AJUSTES MÓVILES */
+@media (max-width: 600px) {
+    .announcement .announcement-media {
+        width: 100%;
+    }
+    .announcement-actions {
+        gap: 8px;
+    }
+}
+
+/* FIN | SIGNED365 V8-3 */

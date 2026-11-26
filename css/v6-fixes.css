@@ -1,12 +1,153 @@
-/* SIGNED365 V6 | Correcciones compartidas de contraste */
-:root.dark .card h3, :root.dark .card .review-person strong,
-:root.dark .cards .card h3, :root.dark .resource h3,
-:root.dark .mini-resource h3 { color: #79d5ff !important; }
-:root.dark .internal-hero h1, :root.dark .hero h1 { color: #f1f8ff; }
-:root.dark .internal-hero h1 em, :root.dark .hero h1 em { color: #79d5ff; }
-/* El video de la portada interna es independiente del video del home. */
-.internal-hero-player { width:100%; min-height:340px; aspect-ratio: 760 / 520; border-radius:20px; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-.internal-hero-player .video-play-button { width:100%; min-height:340px; height:100%; }
-.internal-hero-player .video-media { width:100%; height:100%; }
-.internal-hero-player .video-media video, .internal-hero-player .video-media iframe { display:block; width:100%; height:100%; min-height:340px; object-fit:contain; border:0; }
-@media(max-width:600px){.internal-hero-player,.internal-hero-player .video-play-button,.internal-hero-player .video-media video,.internal-hero-player .video-media iframe{min-height:240px;}}
+/* ============================================================
+   SIGNED365 | V6
+   Correcciones compartidas de contraste
+   Reproductor de video de páginas internas
+   Compatible con temas claro y oscuro
+   ============================================================ */
+
+
+/* ============================================================
+   01. CORRECCIONES DE CONTRASTE | TEMA OSCURO
+   Colores de títulos, tarjetas, recursos y nombres de autores
+   ============================================================ */
+
+
+/* 01.1. Títulos de tarjetas, recursos y nombres de autores */
+
+:root.dark .card h3,
+:root.dark .card .review-person strong,
+:root.dark .cards .card h3,
+:root.dark .resource h3,
+:root.dark .mini-resource h3 {
+    color: #79d5ff !important;
+}
+
+
+/* 01.2. Títulos principales del Hero
+   Aplica tanto a la página de inicio como a las páginas internas.
+*/
+
+:root.dark .internal-hero h1,
+:root.dark .hero h1 {
+    color: #f1f8ff;
+}
+
+
+/* 01.3. Texto destacado de los títulos principales */
+
+:root.dark .internal-hero h1 em,
+:root.dark .hero h1 em {
+    color: #79d5ff;
+}
+
+
+/* ============================================================
+   02. REPRODUCTOR DE VIDEO | PORTADA INTERNA
+   El video de la portada interna es independiente del video
+   de la página de inicio (Home).
+   ============================================================ */
+
+
+/* 02.1. Contenedor principal del reproductor */
+
+.internal-hero-player {
+
+    /* Dimensiones */
+    width: 100%;
+    min-height: 340px;
+
+    /* Proporción del reproductor */
+    aspect-ratio: 760 / 520;
+
+    /* Bordes y control del contenido */
+    border-radius: 20px;
+    overflow: hidden;
+
+    /* Distribución y alineación */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+/* ============================================================
+   03. BOTÓN DE REPRODUCCIÓN
+   Dimensiones del área de interacción del video
+   ============================================================ */
+
+.internal-hero-player .video-play-button {
+
+    /* Dimensiones */
+    width: 100%;
+    min-height: 340px;
+    height: 100%;
+
+}
+
+
+/* ============================================================
+   04. CONTENEDOR MULTIMEDIA
+   Distribución del video dentro del reproductor interno
+   ============================================================ */
+
+
+/* 04.1. Contenedor del contenido multimedia */
+
+.internal-hero-player .video-media {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 04.2. Reproductores de video local y externo
+   Compatible con elementos video e iframe.
+*/
+
+.internal-hero-player .video-media video,
+.internal-hero-player .video-media iframe {
+
+    /* Distribución */
+    display: block;
+
+    /* Dimensiones */
+    width: 100%;
+    height: 100%;
+    min-height: 340px;
+
+    /* Ajuste del contenido multimedia */
+    object-fit: contain;
+
+    /* Eliminar bordes */
+    border: 0;
+
+}
+
+
+/* ============================================================
+   05. DISEÑO RESPONSIVE | DISPOSITIVOS MÓVILES
+   Pantallas de hasta 600px
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+
+    /* 05.1. Altura mínima del reproductor en móviles
+       Aplica al contenedor principal, botón de reproducción,
+       videos locales y reproductores externos.
+    */
+
+    .internal-hero-player,
+    .internal-hero-player .video-play-button,
+    .internal-hero-player .video-media video,
+    .internal-hero-player .video-media iframe {
+        min-height: 240px;
+    }
+
+}
+
+
+/* ============================================================
+   FIN DEL ARCHIVO | CONTRASTE Y REPRODUCTOR INTERNO
+   SIGNED365 V6
+   ============================================================ */

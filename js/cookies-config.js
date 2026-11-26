@@ -1,7 +1,7 @@
 /* SIGNED365 · Configuración central del consentimiento.
    Editar este archivo para cambiar textos y categorías en todas las páginas. */
 window.SIGNED365_COOKIES_CONFIG = {
-    version: '2026-11-19-1',
+    version: '2026-11-26-2',
     delayMs: 3000,
     storageKey: 'signed365_cookie_consent',
     heading: 'Tus preferencias de privacidad',
@@ -27,7 +27,7 @@ window.SIGNED365_COOKIES_CONFIG = {
         {
             id: 'marketing',
             title: 'Publicidad y personalización',
-            description: 'Permiten medir campañas y personalizar comunicaciones cuando se integren herramientas que requieran esta autorización.',
+            description: 'Permiten medir campañas, personalizar comunicaciones y cargar reproductores externos de YouTube cuando autorizas esta categoría.',
             required: false,
             defaultEnabled: false
         }

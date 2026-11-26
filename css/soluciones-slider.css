@@ -1,26 +1,455 @@
 /* ============================================================
-   SIGNED365 V6 | Portada de Soluciones: mockups de computador y móvil
+   SIGNED365 | V6
+   Portada de Soluciones: mockups de computador y móvil
    Estilos aislados para pginter/soluciones.html
    ============================================================ */
-#portada-soluciones .solutions-devices { min-width:0; }
-#portada-soluciones .devices-stage { position:relative; isolation:isolate; width:100%; max-width:690px; margin:0 auto; padding:32px 16px 66px 4px; }
-#portada-soluciones .device-laptop { width:90%; position:relative; filter:drop-shadow(0 22px 20px rgba(9,27,48,.19)); }
-#portada-soluciones .laptop-screen-bezel { background:linear-gradient(145deg,#343c4a,#080c13 70%); border:10px solid #262015; border-bottom-width:13px; border-radius:15px 15px 5px 5px; padding:3px; box-shadow:inset 0 0 0 1px #627184; }
-#portada-soluciones .laptop-screen { aspect-ratio:560/360; position:relative; overflow:hidden; background:#ffffff; border-radius:2px; }
-#portada-soluciones .laptop-screen .hero-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .65s ease; }
-#portada-soluciones .laptop-screen .hero-slide.is-active { opacity:1; }
-#portada-soluciones .laptop-hinge { width:18%; height:5px; background:#5b6674; margin:auto; border-radius:0 0 5px 5px; }
-#portada-soluciones .laptop-base { height:18px; margin:0 -8%; background:linear-gradient(#dce3e9 0%,#909aa7 64%,#56616d 92%,#e2d5d5); border-radius:3px 3px 48% 48% / 3px 3px 80% 80%; box-shadow:0 7px 9px rgba(0,0,0,.13); }
-#portada-soluciones .device-phone { position:absolute; z-index:2; right:0; bottom:67px; width:24%; aspect-ratio:9/18.5; padding:8px 5px; background:linear-gradient(120deg,#343e4a,#050910 65%); border:3px solid #252e3c; border-radius:clamp(13px,2.4vw,27px); box-shadow:0 15px 28px rgba(0,0,0,.35),inset 0 0 0 1px #728091; }
-#portada-soluciones .phone-speaker { position:absolute; z-index:3; top:5px; left:37%; width:26%; height:4px; background:#4b5663; border-radius:4px; }
-#portada-soluciones .phone-screen { position:relative; overflow:hidden; width:100%; height:100%; border-radius:clamp(8px,1.6vw,19px); background:#edf4fb; }
-#portada-soluciones .phone-slide { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:left center; opacity:0; transition:opacity .65s ease; }
-#portada-soluciones .phone-slide.is-active { opacity:1; }
-#portada-soluciones .devices-indicators { position:absolute; left:0; right:0; bottom:12px; display:flex; justify-content:center; gap:11px; z-index:3; }
-#portada-soluciones .devices-indicators button { width:11px; height:11px; border-radius:50%; border:2px solid #0074b9; background:transparent; padding:0; cursor:pointer; }
-#portada-soluciones .devices-indicators button.is-active { background:#0074b9; }
-#portada-soluciones .devices-indicators button:focus-visible { outline:3px solid #f3bd50; outline-offset:4px; }
-[data-theme="dark"] #portada-soluciones .laptop-screen, body.dark #portada-soluciones .laptop-screen { background:#18263b; }
-@media(max-width:767px) { #portada-soluciones .devices-stage { max-width:540px; padding:20px 20px 60px 4px; } #portada-soluciones .device-phone { right:4px; bottom:58px; } }
-@media(max-width:420px) { #portada-soluciones .laptop-screen-bezel { border-width:5px; border-bottom-width:8px; padding:2px; } #portada-soluciones .laptop-base { height:12px; } #portada-soluciones .device-phone { border-width:2px; padding:5px 3px; } }
-@media(prefers-reduced-motion:reduce) { #portada-soluciones .hero-slide, #portada-soluciones .phone-slide { transition:none; } }
+
+
+/* ============================================================
+   01. CONTENEDOR GENERAL DE DISPOSITIVOS
+   Distribución y espacio de trabajo de los mockups
+   ============================================================ */
+
+
+/* 01.1. Contenedor principal */
+
+#portada-soluciones .solutions-devices {
+    min-width: 0;
+}
+
+
+/* 01.2. Escenario de los dispositivos */
+
+#portada-soluciones .devices-stage {
+
+    /* Posicionamiento */
+    position: relative;
+    isolation: isolate;
+
+    /* Dimensiones */
+    width: 100%;
+    max-width: 690px;
+
+    /* Márgenes y espacios internos */
+    margin: 0 auto;
+    padding: 32px 16px 66px 4px;
+
+}
+
+
+/* ============================================================
+   02. MOCKUP DEL COMPUTADOR PORTÁTIL
+   Estructura, marco, pantalla, bisagra y base
+   ============================================================ */
+
+
+/* 02.1. Contenedor principal del computador */
+
+#portada-soluciones .device-laptop {
+
+    /* Dimensiones y ubicación */
+    width: 90%;
+    position: relative;
+
+    /* Sombra exterior */
+    filter: drop-shadow(
+        0 22px 20px rgba(9, 27, 48, .19)
+    );
+
+}
+
+
+/* 02.2. Marco exterior de la pantalla */
+
+#portada-soluciones .laptop-screen-bezel {
+
+    /* Fondo del marco */
+    background: linear-gradient(
+        145deg,
+        #343c4a,
+        #080c13 70%
+    );
+
+    /* Bordes y dimensiones */
+    border: 10px solid #262015;
+    border-bottom-width: 13px;
+    border-radius: 15px 15px 5px 5px;
+    padding: 3px;
+
+    /* Sombra interior */
+    box-shadow: inset 0 0 0 1px #627184;
+
+}
+
+
+/* 02.3. Área visible de la pantalla */
+
+#portada-soluciones .laptop-screen {
+
+    /* Proporción de la pantalla */
+    aspect-ratio: 560 / 360;
+
+    /* Posicionamiento */
+    position: relative;
+    overflow: hidden;
+
+    /* Apariencia */
+    background: #ffffff;
+    border-radius: 2px;
+
+}
+
+
+/* ============================================================
+   03. SLIDER DEL COMPUTADOR PORTÁTIL
+   Imágenes y transición entre diapositivas
+   ============================================================ */
+
+
+/* 03.1. Configuración general de las imágenes */
+
+#portada-soluciones .laptop-screen .hero-slide {
+
+    /* Ubicación */
+    position: absolute;
+    inset: 0;
+
+    /* Dimensiones y ajuste */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    /* Estado inicial */
+    opacity: 0;
+
+    /* Transición entre imágenes */
+    transition: opacity .65s ease;
+
+}
+
+
+/* 03.2. Imagen activa del slider */
+
+#portada-soluciones .laptop-screen .hero-slide.is-active {
+    opacity: 1;
+}
+
+
+/* ============================================================
+   04. COMPONENTES INFERIORES DEL COMPUTADOR
+   Bisagra y base del mockup
+   ============================================================ */
+
+
+/* 04.1. Bisagra de la pantalla */
+
+#portada-soluciones .laptop-hinge {
+
+    /* Dimensiones */
+    width: 18%;
+    height: 5px;
+
+    /* Apariencia */
+    background: #5b6674;
+    margin: auto;
+    border-radius: 0 0 5px 5px;
+
+}
+
+
+/* 04.2. Base inferior del computador */
+
+#portada-soluciones .laptop-base {
+
+    /* Dimensiones y márgenes */
+    height: 18px;
+    margin: 0 -8%;
+
+    /* Degradado de acabado metálico */
+    background: linear-gradient(
+        #dce3e9 0%,
+        #909aa7 64%,
+        #56616d 92%,
+        #e2d5d5
+    );
+
+    /* Forma de la base */
+    border-radius:
+        3px 3px 48% 48% /
+        3px 3px 80% 80%;
+
+    /* Sombra inferior */
+    box-shadow: 0 7px 9px rgba(0, 0, 0, .13);
+
+}
+
+
+/* ============================================================
+   05. MOCKUP DEL TELÉFONO MÓVIL
+   Carcasa, ubicación, dimensiones y pantalla
+   ============================================================ */
+
+
+/* 05.1. Contenedor principal del teléfono */
+
+#portada-soluciones .device-phone {
+
+    /* Ubicación y prioridad visual */
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    bottom: 67px;
+
+    /* Dimensiones y proporción */
+    width: 24%;
+    aspect-ratio: 9 / 18.5;
+    padding: 8px 5px;
+
+    /* Fondo de la carcasa */
+    background: linear-gradient(
+        120deg,
+        #343e4a,
+        #050910 65%
+    );
+
+    /* Bordes y forma */
+    border: 3px solid #252e3c;
+    border-radius: clamp(13px, 2.4vw, 27px);
+
+    /* Sombras exteriores e interiores */
+    box-shadow:
+        0 15px 28px rgba(0, 0, 0, .35),
+        inset 0 0 0 1px #728091;
+
+}
+
+
+/* 05.2. Altavoz superior del teléfono */
+
+#portada-soluciones .phone-speaker {
+
+    /* Ubicación y prioridad visual */
+    position: absolute;
+    z-index: 3;
+    top: 5px;
+    left: 37%;
+
+    /* Dimensiones */
+    width: 26%;
+    height: 4px;
+
+    /* Apariencia */
+    background: #4b5663;
+    border-radius: 4px;
+
+}
+
+
+/* 05.3. Área visible de la pantalla del teléfono */
+
+#portada-soluciones .phone-screen {
+
+    /* Posicionamiento */
+    position: relative;
+    overflow: hidden;
+
+    /* Dimensiones */
+    width: 100%;
+    height: 100%;
+
+    /* Apariencia */
+    border-radius: clamp(8px, 1.6vw, 19px);
+    background: #edf4fb;
+
+}
+
+
+/* ============================================================
+   06. SLIDER DEL TELÉFONO MÓVIL
+   Imágenes y transición entre diapositivas
+   ============================================================ */
+
+
+/* 06.1. Configuración general de las imágenes */
+
+#portada-soluciones .phone-slide {
+
+    /* Ubicación */
+    position: absolute;
+    inset: 0;
+
+    /* Dimensiones y ajuste */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+
+    /* Estado inicial */
+    opacity: 0;
+
+    /* Transición entre imágenes */
+    transition: opacity .65s ease;
+
+}
+
+
+/* 06.2. Imagen activa del slider */
+
+#portada-soluciones .phone-slide.is-active {
+    opacity: 1;
+}
+
+
+/* ============================================================
+   07. INDICADORES DE NAVEGACIÓN DEL SLIDER
+   Puntos inferiores para seleccionar las diapositivas
+   ============================================================ */
+
+
+/* 07.1. Contenedor de los indicadores */
+
+#portada-soluciones .devices-indicators {
+
+    /* Ubicación */
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 12px;
+
+    /* Distribución y alineación */
+    display: flex;
+    justify-content: center;
+    gap: 11px;
+
+    /* Prioridad visual */
+    z-index: 3;
+
+}
+
+
+/* 07.2. Apariencia general de los indicadores */
+
+#portada-soluciones .devices-indicators button {
+
+    /* Dimensiones y forma */
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+
+    /* Colores y bordes */
+    border: 2px solid #0074b9;
+    background: transparent;
+
+    /* Espaciado e interacción */
+    padding: 0;
+    cursor: pointer;
+
+}
+
+
+/* 07.3. Indicador de la diapositiva activa */
+
+#portada-soluciones .devices-indicators button.is-active {
+    background: #0074b9;
+}
+
+
+/* 07.4. Accesibilidad mediante teclado */
+
+#portada-soluciones .devices-indicators button:focus-visible {
+    outline: 3px solid #f3bd50;
+    outline-offset: 4px;
+}
+
+
+/* ============================================================
+   08. ADAPTACIÓN AL TEMA OSCURO
+   Fondo de la pantalla del computador
+   ============================================================ */
+
+[data-theme="dark"] #portada-soluciones .laptop-screen,
+body.dark #portada-soluciones .laptop-screen {
+    background: #18263b;
+}
+
+
+/* ============================================================
+   09. DISEÑO RESPONSIVE | DISPOSITIVOS MÓVILES
+   Pantallas de hasta 767px
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+
+    /* 09.1. Dimensiones del escenario de dispositivos */
+
+    #portada-soluciones .devices-stage {
+        max-width: 540px;
+        padding: 20px 20px 60px 4px;
+    }
+
+
+    /* 09.2. Ajuste de posición del teléfono móvil */
+
+    #portada-soluciones .device-phone {
+        right: 4px;
+        bottom: 58px;
+    }
+
+}
+
+
+/* ============================================================
+   10. DISEÑO RESPONSIVE | PANTALLAS PEQUEÑAS
+   Pantallas de hasta 420px
+   ============================================================ */
+
+@media (max-width: 420px) {
+
+
+    /* 10.1. Reducción del marco del computador */
+
+    #portada-soluciones .laptop-screen-bezel {
+        border-width: 5px;
+        border-bottom-width: 8px;
+        padding: 2px;
+    }
+
+
+    /* 10.2. Reducción de la base del computador */
+
+    #portada-soluciones .laptop-base {
+        height: 12px;
+    }
+
+
+    /* 10.3. Reducción del marco del teléfono */
+
+    #portada-soluciones .device-phone {
+        border-width: 2px;
+        padding: 5px 3px;
+    }
+
+}
+
+
+/* ============================================================
+   11. ACCESIBILIDAD | REDUCCIÓN DE ANIMACIONES
+   Desactiva las transiciones cuando el usuario ha configurado
+   su dispositivo para reducir el movimiento.
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #portada-soluciones .hero-slide,
+    #portada-soluciones .phone-slide {
+        transition: none;
+    }
+
+}
+
+
+/* ============================================================
+   FIN DEL ARCHIVO | PORTADA DE SOLUCIONES
+   SIGNED365 V6
+   ============================================================ */
