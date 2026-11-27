@@ -7,7 +7,7 @@
 <meta content="Conoce las soluciones SIGNED365 para facturación electrónica, firma de documentos y contratos." name="description"/>
 <title>
    Soluciones | SIGNED365
-  </title>
+</title>
 <link href="../assets/favicon.png" rel="icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -20,25 +20,169 @@
 <link href="../css/v5-fixes.css" rel="stylesheet"/>
 <link href="../css/internas.css" rel="stylesheet"/>
 <link href="../css/v6-fixes.css" rel="stylesheet"/>
-<script defer="" src="../js/announcement-shared.js">
-</script>
-<script defer="" src="../js/announcement.js">
-</script>
-<script defer="" src="../js/v4.js">
-</script>
+
+<!-- Función de PopUp (Anuncio) -->
+<script defer src="../js/announcement-config.js"></script>
+<script defer="" src="../js/announcement-shared.js"></script>
+<script defer="" src="../js/announcement.js"></script>
+
+<script defer="" src="../js/v4.js"></script>
 <style>
-   /* V6 · Soluciones: estilos específicos de la página interna */
-.solutions-hero-image{display:block;width:100%;height:auto;aspect-ratio:17/11;object-fit:cover;border-radius:22px;box-shadow:0 18px 35px rgba(0,68,112,.08)}
-.solutions-benefits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
-.solutions-benefits .card{min-width:0}
-.solutions-benefits .card h3{font-size:1.03rem;line-height:1.45}
-#portada-soluciones h1{color:var(--ink,#142b3b)}
-#portada-soluciones h1 em{color:#0074b9}
-[data-theme="dark"] #portada-soluciones h1,body.dark #portada-soluciones h1,body.dark-mode #portada-soluciones h1{color:#f5f8ff}
-[data-theme="dark"] #portada-soluciones h1 em,body.dark #portada-soluciones h1 em,body.dark-mode #portada-soluciones h1 em{color:#55c5f6}
-@media(max-width:991px){.solutions-benefits{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:575px){.solutions-benefits{grid-template-columns:1fr}}
-  </style>
+
+/* V6 · Soluciones: estilos específicos de la página interna */
+/* ============================================================
+   01. IMAGEN PRINCIPAL DE LA PORTADA
+   Dimensiones, proporción y apariencia de la imagen.
+   ============================================================ */
+
+.solutions-hero-image {
+
+    /* Distribución */
+    display: block;
+
+    /* Dimensiones */
+    width: 100%;
+    height: auto;
+
+    /* Proporción y ajuste de la imagen */
+    aspect-ratio: 17 / 11;
+    object-fit: cover;
+
+    /* Bordes redondeados */
+    border-radius: 22px;
+
+    /* Sombra exterior */
+    box-shadow: 0 18px 35px rgba(0, 68, 112, .08);
+
+}
+
+/* ============================================================
+   02. TARJETAS DE BENEFICIOS
+   Distribución y apariencia de las tarjetas de Soluciones.
+   ============================================================ */
+
+/* 02.1. Contenedor general de beneficios
+   Distribución predeterminada de cuatro columnas.
+*/
+
+.solutions-benefits {
+
+    /* Sistema de distribución */
+    display: grid;
+
+    /* Número de columnas */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    /* Separación entre tarjetas */
+    gap: 22px;
+
+}
+
+/* 02.2. Dimensiones individuales de las tarjetas
+   Permite que las tarjetas se ajusten al espacio disponible.
+*/
+
+.solutions-benefits .card {
+    min-width: 0;
+}
+
+/* 02.3. Tipografía de los títulos de las tarjetas */
+
+.solutions-benefits .card h3 {
+
+    /* Tamaño del texto */
+    font-size: 1.03rem;
+
+    /* Altura de línea */
+    line-height: 1.45;
+
+}
+
+/* ============================================================
+   03. TÍTULOS DE PORTADA | TEMA CLARO
+   Colores predeterminados del título principal de Soluciones.
+   ============================================================ */
+
+/* 03.1. Color del título principal */
+
+#portada-soluciones h1 {
+
+    /* Variable global con color alternativo */
+    color: var(--ink, #142b3b);
+
+}
+
+/* 03.2. Color del texto destacado del título */
+
+#portada-soluciones h1 em {
+    color: #0074b9;
+}
+
+/* ============================================================
+   04. TÍTULOS DE PORTADA | TEMA OSCURO
+
+   Selectores compatibles con los diferentes mecanismos
+   de activación del tema oscuro contemplados en el código.
+   ============================================================ */
+
+/* 04.1. Color del título principal en tema oscuro */
+
+[data-theme="dark"] #portada-soluciones h1,
+body.dark #portada-soluciones h1,
+body.dark-mode #portada-soluciones h1 {
+    color: #f5f8ff;
+}
+
+/* 04.2. Color del texto destacado en tema oscuro */
+
+[data-theme="dark"] #portada-soluciones h1 em,
+body.dark #portada-soluciones h1 em,
+body.dark-mode #portada-soluciones h1 em {
+    color: #55c5f6;
+}
+
+/* ============================================================
+   05. DISEÑO RESPONSIVE | TABLETS Y PANTALLAS MEDIANAS
+   Pantallas de hasta 991px.
+
+   Reduce la distribución de cuatro a dos columnas.
+   ============================================================ */
+
+@media (max-width: 991px) {
+
+
+    /* 05.1. Distribución de las tarjetas de beneficios */
+
+    .solutions-benefits {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* ============================================================
+   06. DISEÑO RESPONSIVE | DISPOSITIVOS MÓVILES
+   Pantallas de hasta 575px.
+
+   Distribuye las tarjetas en una sola columna.
+   ============================================================ */
+
+@media (max-width: 575px) {
+
+
+    /* 06.1. Distribución de las tarjetas de beneficios */
+
+    .solutions-benefits {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ============================================================
+   FIN DEL ARCHIVO | PÁGINA INTERNA DE SOLUCIONES
+   SIGNED365 EVOLUTION V6
+   ============================================================ */
+
+</style>
 <link href="../css/v7.css" rel="stylesheet"/>    <!-- V8 · Popup fade y ajustes visuales -->
     <link rel="stylesheet" href="../css/v8.css"/>
     <!-- Cookies: estilos compartidos -->
@@ -67,7 +211,7 @@
                             Inicio
                      </a>
                      <div class="nav-dropdown">
-                            <a aria-haspopup="true" class="nav-dropdown-link">
+                            <a href="../pginter/soluciones.html" aria-haspopup="true" class="nav-dropdown-link">
                                    Soluciones
                             </a>
                             <button aria-controls="firma-submenu" aria-expanded="false" aria-label="Soluciones SIGNED365" class="nav-dropdown-toggle" type="button">

@@ -1,28 +1,5 @@
-SIGNED365 | V8-3 | POPUP MULTIMEDIA
-
-01. Instalación
-Respaldar el sitio. Copiar las carpetas js y css sobre las existentes.
-El index.html incluido deriva del último index adjunto; solo agrega la referencia de configuración.
-En cada página interna que ya use el anuncio, agregar ANTES de announcement-shared.js:
-    <script defer src="../js/announcement-config.js"></script>
-Mantener announcement-shared.js y announcement.js en ese orden.
-No sustituir v8.css ni cookies.js. No modificar otros scripts.
-
-02. Campañas
-Editar js/announcement-config.js. Las cinco modalidades están comentadas.
-La portada actual debe existir en assets/popup/streaming365-b.png.
-Para MP4, subir el archivo indicado en localVideo.src (no incluido).
-Para YouTube, pegar únicamente el src del iframe. El reproductor no inicia automáticamente.
-Cambiar campaignId para una campaña nueva. enabled:false oculta también la campana.
-
-03. Privacidad
-Se actualiza la descripción de marketing y la versión del consentimiento para solicitar
-una nueva elección. YouTube no carga sin autorización de marketing. Después de autorizar,
-pulsar Reproducir video nuevamente si se muestra el botón. El MP4 local no exige marketing.
-El dominio youtube-nocookie no elimina todas las conexiones externas.
-
-04. Pruebas recomendadas en hosting de prueba
-Probar las cinco modalidades, desactivación, campana, cierre, Escape, móvil y tema oscuro.
-Comprobar rechazo, aceptación y revocación de marketing; comprobar que no hay audio tras cerrar.
-Verificar rutas desde index y pginter. Verificar permisos de inserción del video YouTube.
-La validación realizada es sintáctica de JavaScript; no se ha probado en navegador ni hosting.
+SIGNED365 V8-3.4
+Reemplazar js/announcement-shared.js y css/v5.css.
+Conservar los demás archivos y la carpeta assets/vid.
+Se admite file: para el fondo solo si el sitio se abre localmente.
+Alineación vertical del menú en escritorio desde 901px.

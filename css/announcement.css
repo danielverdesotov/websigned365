@@ -477,4 +477,90 @@ body:not(:has(.announcement.is-open)) .floating .announcement-bell {
     }
 }
 
-/* FIN | SIGNED365 V8-3 */
+
+/* ============================================================
+   17. V8-3.2 | FONDO DECORATIVO DINÁMICO DE LA PORTADA
+   ============================================================ */
+
+
+/* 17.1. Contenedor principal de la imagen */
+
+.announcement .announcement-image-wrapper {
+
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+
+    overflow: hidden;
+    border-radius: 10px;
+
+}
+
+
+/* 17.2. Color alternativo del fondo activo */
+
+.announcement .announcement-image-wrapper.has-decorative-background {
+
+    background-color: var(--announcement-bg-color, #004470);
+
+}
+
+
+/* 17.3. Capa independiente del fondo desenfocado */
+
+.announcement .announcement-image-wrapper > .announcement-background-image {
+
+    /* Posicionamiento de la capa de fondo */
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    /* Imagen dinámica */
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    object-fit: cover;
+    object-position: center;
+
+    /* Desenfoque configurable */
+    filter: blur(var(--announcement-bg-blur, 20px));
+
+    /* Opacidad configurable */
+    opacity: var(--announcement-bg-opacity, .85);
+
+    /* Ampliación configurable */
+    transform: scale(var(--announcement-bg-scale, 1.15));
+
+    /* Evitar interferencias con la imagen principal */
+    pointer-events: none;
+
+}
+
+
+/* 17.4. Imagen principal sin desenfoque */
+
+.announcement .announcement-image-wrapper .announcement-image {
+
+    /* Capa superior */
+    position: relative;
+    z-index: 1;
+
+    /* Distribución */
+    display: block;
+    width: 100%;
+
+    /* Conservar proporciones */
+    object-fit: contain;
+
+    /* Permitir visualizar el fondo desenfocado */
+    background: transparent !important;
+
+}
+
+
+/* ============================================================
+   FIN | SIGNED365 V8-3.2
+   ============================================================ */

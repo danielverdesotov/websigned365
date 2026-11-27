@@ -27,6 +27,19 @@
 }
 
 
+/* 01.1.1. Alineación de enlaces simples y desplegables
+   Solo escritorio: en móvil se conserva la distribución vertical.
+*/
+
+@media (min-width: 901px) {
+
+    .nav nav {
+        align-items: center;
+    }
+
+}
+
+
 /* 01.2. Enlace principal del menú
    Evita que el texto se divida en varias líneas.
 */

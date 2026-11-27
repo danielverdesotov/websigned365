@@ -12,11 +12,14 @@
     place-items: center;
     pointer-events: none;
 }
+
+/* Cofiguración del Blur para cubrir fondo general. */
+
 .announcement .announcement-shade {
     position: absolute;
     inset: 0;
-    background: rgba(4, 15, 31, .63);
-    backdrop-filter: blur(3px);
+    background: rgba(5, 15, 30, .65);
+    backdrop-filter: blur(5px);
     opacity: 0;
     visibility: hidden;
     transition: opacity .38s ease, visibility .38s;
@@ -58,7 +61,8 @@
     width: 100%;
     max-height: min(67dvh, 690px);
     object-fit: contain;
-    background: rgba(8, 25, 49, 0.20); /* Color de Fondo restante del PopUp de Anuncio. */
+    /* V8-3.2: fondo decorativo gestionado desde announcement-config.js. */
+    background: transparent;
     border-radius: 10px;
 }
 .announcement .announcement-link { display: block; text-decoration: none; }

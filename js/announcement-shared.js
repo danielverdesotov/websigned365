@@ -1,5 +1,5 @@
 /* ============================================================
-   SIGNED365 | V8-3 | GENERACIÓN DEL ANUNCIO MULTIMEDIA
+   SIGNED365 | V8-3.2 | GENERACIÓN DEL ANUNCIO MULTIMEDIA
    ============================================================ */
 (() => {
     'use strict';
@@ -112,6 +112,79 @@
         return element;
     }
 
+    /* ========================================================
+       04.1. PORTADA CON FONDO DECORATIVO DINÁMICO
+       La capa de fondo es independiente de la imagen principal.
+       Las rutas se resuelven desde la raíz del sitio.
+       ======================================================== */
+
+    function imageWithBackground() {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'announcement-image-wrapper';
+
+        const picture = image();
+        const settings = config.background;
+
+        if (settings?.enabled === true) {
+            wrapper.classList.add('has-decorative-background');
+
+            /* Validar los valores numéricos de configuración. */
+            function bounded(value, fallback, min, max) {
+                const number = Number(value ?? fallback);
+                return Number.isFinite(number)
+                    ? Math.min(max, Math.max(min, number))
+                    : fallback;
+            }
+
+            wrapper.style.setProperty('--announcement-bg-blur',
+                `${bounded(settings.blur, 20, 0, 100)}px`);
+            wrapper.style.setProperty('--announcement-bg-opacity',
+                String(bounded(settings.opacity, 0.85, 0, 1)));
+            wrapper.style.setProperty('--announcement-bg-scale',
+                String(bounded(settings.scale, 1.15, 1, 3)));
+
+            const color = settings.fallbackColor || '#004470';
+            if (CSS.supports('color', color)) {
+                wrapper.style.setProperty('--announcement-bg-color', color);
+            }
+
+            /* Seleccionar la misma portada o una imagen alternativa. */
+            const path = settings.useCoverImage !== false
+                ? picture.src
+                : settings.customImage;
+
+            if (path) {
+                try {
+                    const url = new URL(path, siteRoot);
+                    /* 04.1.1. Admitir archivos locales únicamente durante
+                       pruebas del sitio abierto mediante file://. En hosting,
+                       mantener la validación HTTP/HTTPS. */
+                    const isWebImage = ['http:', 'https:'].includes(url.protocol);
+                    const isLocalImage = siteRoot.protocol === 'file:'
+                        && url.protocol === 'file:';
+
+                    if (isWebImage || isLocalImage) {
+                        /* Capa real de imagen, independiente de la portada. */
+                        const backgroundImage = document.createElement('img');
+                        backgroundImage.className = 'announcement-background-image';
+                        backgroundImage.alt = '';
+                        backgroundImage.setAttribute('aria-hidden', 'true');
+                        backgroundImage.addEventListener('error', () => {
+                            backgroundImage.remove();
+                        });
+                        backgroundImage.src = url.href;
+                        wrapper.append(backgroundImage);
+                    }
+                } catch (_) {
+                    // Si la ruta no es válida, conservar el color alternativo.
+                }
+            }
+        }
+
+        wrapper.append(picture);
+        return wrapper;
+    }
+
     function youtubeUrl() {
         const url = new URL(config.youtube.src);
         if (url.protocol !== 'https:' || !['www.youtube.com', 'www.youtube-nocookie.com', 'youtube.com'].includes(url.hostname) || !/^\/embed\/[\w-]+$/.test(url.pathname)) {
@@ -186,13 +259,13 @@
                 link.target = '_blank';
                 link.rel = 'noopener noreferrer';
             }
-            link.append(image());
+            link.append(imageWithBackground());
             stage.append(link);
         } else if (cover) {
             /* 06.1. Portada independiente y botón inferior */
             const wrapper = document.createElement('div');
             wrapper.className = 'announcement-cover';
-            wrapper.append(image());
+            wrapper.append(imageWithBackground());
             const trigger = button(config.playLabel, play, wrapper);
             trigger.classList.add('announcement-play');
             const icon = document.createElement('span');

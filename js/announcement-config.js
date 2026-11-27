@@ -1,5 +1,5 @@
 /* ============================================================
-   SIGNED365 | EVOLUTION V8-3 | CONFIGURACIÓN DEL ANUNCIO
+   SIGNED365 | EVOLUTION V8-3.2 | CONFIGURACIÓN DEL ANUNCIO
    Editar únicamente este archivo para cambiar la campaña.
    ============================================================ */
 window.SIGNED365_ANNOUNCEMENT_CONFIG = {
@@ -13,14 +13,14 @@ window.SIGNED365_ANNOUNCEMENT_CONFIG = {
        local-cover   = imagen; al pulsar, reproduce MP4.
        Cambiar únicamente mode; conservar los demás bloques.
     */
-    enabled: true,
+    enabled: true, /* Prender/Apagar ANUNCIO */
     mode: 'youtube-cover',
 
     /* 02. TEXTOS */
     title: 'Información importante',
     kicker: 'SIGNED365 TE INFORMA',
     note: '.:: Verlo en YouTube ::.',
-    playLabel: 'Reproducir video',
+    playLabel: 'Ir al Streaming',
     /* Enlace de la nota inferior; usar '' para mostrar solo texto. */
     noteUrl: 'https://www.youtube.com/@signed365',
 
@@ -33,8 +33,8 @@ window.SIGNED365_ANNOUNCEMENT_CONFIG = {
        Requiere autorización de la categoría marketing.
     */
     youtube: {
-        src: 'https://www.youtube.com/embed/LNoWX3li9Zo?si=qmQAO90JF9ZTRh1L',
-        title: 'Video oficial SIGNED365'
+        src: 'https://www.youtube.com/embed/fGr2bNd7W-Y?si=smPdAkSau32ZRXi5',
+        title: 'Streaming de Lanzamiento'
     },
 
     /* 05. VIDEO LOCAL | Ejemplos: anuncio.mp4 (raíz),
@@ -61,5 +61,38 @@ window.SIGNED365_ANNOUNCEMENT_CONFIG = {
     autoOpen: true,
     delay: 5000,
     campaignId: 'streaming-2026-12-09',
-    showBell: true
+    showBell: true,
+
+    /* ========================================================
+       08. FONDO DECORATIVO DE LA PORTADA
+       Aplica a image, youtube-cover y local-cover.
+       No modifica el reproductor ni el fondo de la página.
+       ======================================================== */
+
+    background: {
+
+        /* 08.1. Activar el fondo decorativo */
+        enabled: true,
+
+        /* 08.2. Usar la imagen de la sección 03 automáticamente.
+           false = utilizar customImage. */
+        useCoverImage: true,
+
+        /* 08.3. Ruta alternativa relativa a la raíz del sitio */
+        customImage: '',
+
+        /* 08.4. Desenfoque en píxeles (0 a 100) */
+        blur: 10,
+
+        /* 08.5. Opacidad de la imagen (0 a 1) */
+        opacity: 0.85,
+
+        /* 08.6. Ampliación para reducir los bordes del filtro */
+        scale: 1.20,
+
+        /* 08.7. Color alternativo si no hay imagen de fondo */
+        fallbackColor: 'rgb(205, 230, 240)'
+
+
+    }
 };
